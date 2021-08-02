@@ -1,0 +1,4 @@
+<resources>
+
+    <style name="Theme.QMSCutBankDashboard" parent="@style/Theme.Leanback" />
+</resources>
