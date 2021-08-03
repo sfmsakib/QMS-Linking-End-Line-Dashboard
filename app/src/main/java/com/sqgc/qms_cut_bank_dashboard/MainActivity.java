@@ -26,10 +26,10 @@ public class MainActivity extends FragmentActivity {
 
 
         ArrayList<CutBankModel> cutBankModelArrayList = new ArrayList<>();
-        cutBankModelArrayList.add(new CutBankModel("Unit1", "Line1","4817-Hileg", "12313124124-TBA-9", 455,535,1534523));
-        cutBankModelArrayList.add(new CutBankModel("Unit1", "Line2","4817-Hileg", "12313124124-TBA-9", 5435,452,12533));
-        cutBankModelArrayList.add(new CutBankModel("Unit2", "Line3","4817-Hileg", "12313124124-TBA-9", 245,3443,3535));
-        cutBankModelArrayList.add(new CutBankModel("Unit2", "Line4","4817-Hileg", "12313124124-TBA-9", 24545,4543,63645));
+        cutBankModelArrayList.add(new CutBankModel("Unit1", "Line1","4817-Hileg", "12313124124-TBA-941234", 455,535,1534523));
+        cutBankModelArrayList.add(new CutBankModel("Unit1", "Line2","4817-Hileg", "12313124124-TBA-933113", 5435,452,12533));
+        cutBankModelArrayList.add(new CutBankModel("Unit2", "Line3","4817-Hileg", "12313124124-TBA-954234", 245,3443,3535));
+        cutBankModelArrayList.add(new CutBankModel("Unit2", "Line4","4817-Hileg", "12313124124-TBA-935153", 24545,4543,63645));
 
         lineRecyclerView = findViewById(R.id.rvLine);
         lineRecyclerView.setLayoutManager(new LinearLayoutManager(this));

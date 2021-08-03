@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:weightSum="7">
+        android:weightSum="8">
 
         <TextView
             android:id="@+id/tvProductionUnit"
@@ -17,7 +17,6 @@
             android:background="@drawable/border"
             android:gravity="center"
             android:padding="2dp"
-            android:text="Production Unit"
             android:textColor="@color/white" />
 
         <TextView
@@ -28,60 +27,54 @@
             android:background="@drawable/border"
             android:gravity="center"
             android:padding="2dp"
-            android:text="Line"
             android:textColor="@color/white" />
         <TextView
             android:id="@+id/tvStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:background="@drawable/border"
             android:gravity="center"
             android:padding="2dp"
-            android:text="Style"
             android:textColor="@color/white"/>
 
         <TextView
             android:id="@+id/tvPO"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:background="@drawable/border"
             android:gravity="center"
             android:padding="2dp"
-            android:text="PO"
             android:textColor="@color/white"/>
 
         <TextView
-            android:id="@+id/tvCutBankIn"
+            android:id="@+id/rowTvCutBankIn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:gravity="center"
             android:padding="2dp"
-            android:text="Cut Bank In"
             android:textColor="@color/white"/>
         <TextView
-            android:id="@+id/tvCutBankOut"
+            android:id="@+id/rowTvCutBankOut"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:gravity="center"
             android:padding="2dp"
-            android:text="Cut Bank Out"
             android:textColor="@color/white"/>
 
         <TextView
-            android:id="@+id/tvCutBankWip"
+            android:id="@+id/rowTvCutBankWip"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/border"
             android:gravity="center"
             android:padding="2dp"
-            android:text="Cut Bank WIP"
             android:textColor="@color/white"/>
 
     </LinearLayout>
