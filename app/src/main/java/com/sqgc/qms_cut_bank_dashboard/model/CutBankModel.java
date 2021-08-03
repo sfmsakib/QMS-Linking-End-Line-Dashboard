@@ -1,4 +1,4 @@
-package com.sqgc.qms_cut_bank_dashboard;
+package com.sqgc.qms_cut_bank_dashboard.model;
 
 public class CutBankModel {
     private String productionUnit;

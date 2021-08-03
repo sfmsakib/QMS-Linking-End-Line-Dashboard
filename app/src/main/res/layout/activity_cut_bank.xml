@@ -4,7 +4,7 @@
     android:id="@+id/main_browse_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".view.CutBankActivity"
     tools:deviceIds="tv"
     android:background="#020000"
     tools:ignore="MergeRootFrame" >
