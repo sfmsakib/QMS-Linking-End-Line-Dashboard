@@ -2,6 +2,7 @@ package com.sqgc.qms_cut_bank_dashboard.view;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
@@ -14,8 +15,11 @@ import com.sqgc.qms_cut_bank_dashboard.model.adapters.LineRecyclerViewAdapter;
 import com.sqgc.qms_cut_bank_dashboard.R;
 import com.sqgc.qms_cut_bank_dashboard.viewmodel.CutBankViewModel;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /*
  * Main Activity class that loads {@link MainFragment}.
@@ -57,7 +61,13 @@ public class CutBankActivity extends FragmentActivity {
             }
         });
 
-
+        TextView dateTimeTextView = findViewById(R.id.tvDateTime);
+        cutBankViewModel.getDateTime().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                dateTimeTextView.setText(s);
+            }
+        });
 
     }
 }

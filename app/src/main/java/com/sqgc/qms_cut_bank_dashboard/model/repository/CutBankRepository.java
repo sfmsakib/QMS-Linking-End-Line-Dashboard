@@ -19,6 +19,7 @@ public class CutBankRepository {
     public CutBankRepository() {
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
     }
+
     public void getCutBankData(CutBankResponse cutBankResponse){
         ArrayList<CutBankModel> cutBankModelArrayListDemo = new ArrayList<>();
         cutBankModelArrayListDemo.add(new CutBankModel("Unit1", "Line77","4817-Hileg", "12313124124-TBA-941234", 455,535,1534523));
