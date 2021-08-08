@@ -1,12 +1,29 @@
 package com.sqgc.qms_cut_bank_dashboard.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class CutBankModel {
+    @SerializedName("ProductionName")
+    @Expose
     private String productionUnit;
+    @SerializedName("Line")
+    @Expose
     private String line;
+    @SerializedName("Style")
+    @Expose
     private String style;
+    @SerializedName("PONumber")
+    @Expose
     private String po;
+    @SerializedName("CutBankIn")
+    @Expose
     private int cutBankIn;
+    @SerializedName("CutBankOut")
+    @Expose
     private int cutBankOut;
+    @SerializedName("CutBankWIP")
+    @Expose
     private int cutBankWip;
 
     public CutBankModel(String productionUnit, String line, String style, String po, int cutBankIn, int cutBankOut, int cutBankWip) {

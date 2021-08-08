@@ -66,6 +66,7 @@
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:padding="2dp"
+                android:maxLines="1"
                 android:text="Production Unit"
                 android:textColor="@color/white" />
 
@@ -128,6 +129,26 @@
                 android:textColor="@color/white"/>
 
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/error_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:padding="30dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Failed To Fetch Data\nPlease wait..."
+                android:textSize="40sp"
+                android:textColor="@color/red"
+                android:textAlignment="center"/>
+        </LinearLayout>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLine"
             android:layout_width="match_parent"
@@ -136,8 +157,7 @@
             android:layout_marginEnd="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            tools:listitem="@layout/row_line_recyclerview"
-            tools:itemCount="10"/>
+            tools:listitem="@layout/row_line_recyclerview"/>
 
     </LinearLayout>
 </FrameLayout>

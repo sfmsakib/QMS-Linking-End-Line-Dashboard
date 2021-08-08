@@ -1,7 +1,9 @@
 package com.sqgc.qms_cut_bank_dashboard.view;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.fragment.app.FragmentActivity;
@@ -27,6 +29,7 @@ import java.util.Locale;
 public class CutBankActivity extends FragmentActivity {
     RecyclerView lineRecyclerView;
     CutBankViewModel cutBankViewModel;
+    LinearLayout linearLayout;
     ArrayList<CutBankModel> cutBankModelArrayList = new ArrayList<>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,18 +42,30 @@ public class CutBankActivity extends FragmentActivity {
 //        }
 
 
+        linearLayout = findViewById(R.id.error_layout);
         lineRecyclerView = findViewById(R.id.rvLine);
         lineRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         cutBankViewModel = new ViewModelProvider(this).get(CutBankViewModel.class);
 
+
         cutBankViewModel.getCutBankData().observe(this, new Observer<List<CutBankModel>>() {
             @Override
             public void onChanged(List<CutBankModel> cutBankModels) {
-                cutBankModelArrayList.clear();
-                cutBankModelArrayList.addAll(cutBankModels);
-                LineRecyclerViewAdapter lineRecyclerViewAdapter = new LineRecyclerViewAdapter(cutBankModelArrayList, CutBankActivity.this);
-                lineRecyclerView.setAdapter(lineRecyclerViewAdapter);
+                if (cutBankModels!=null){
+                    Log.i("CUT_BANK_DASHBOARD","OnChanged:"+cutBankModels.toString());
+                    if (cutBankModelArrayList!=null){
+                        cutBankModelArrayList.clear();
+                        cutBankModelArrayList.addAll(cutBankModels);
+                        LineRecyclerViewAdapter lineRecyclerViewAdapter = new LineRecyclerViewAdapter(cutBankModelArrayList, CutBankActivity.this);
+                        lineRecyclerView.setAdapter(lineRecyclerViewAdapter);
+                        linearLayout.setVisibility(View.GONE);
+                        lineRecyclerView.setVisibility(View.VISIBLE);
+                    }
+                }else {
+                    lineRecyclerView.setVisibility(View.GONE);
+                    linearLayout.setVisibility(View.VISIBLE);
+                }
             }
         });
 
