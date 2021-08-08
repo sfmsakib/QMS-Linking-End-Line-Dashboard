@@ -42,7 +42,7 @@ public class CutBankRepository {
                 callApi(cutBankResponse);
                 //callAPIWithDelay(cutBankResponse);
             }
-        }, 10);
+        }, 50000);
     }
 
     private void callApi(CutBankResponse cutBankResponse) {
