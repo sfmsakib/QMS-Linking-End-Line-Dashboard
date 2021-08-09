@@ -66,10 +66,11 @@ public class CutBankViewModel extends AndroidViewModel {
         return dateLive;
     }
     private void setTime() {
-        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
-        String currentTime = new SimpleDateFormat("'Date:' dd-MM-yyyy '| Time:' HH:mm:ss aaa", Locale.getDefault()).format(new Date());
-        String finalValue = String.valueOf("Date: "+currentDate+" | Time: "+currentTime);
-        dateLive.setValue(currentTime);
+        //String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        //String finalValue = String.valueOf("Date: "+currentDate+" | Time: "+currentTime);
+
+        String currentDateTime = new SimpleDateFormat("'Date:' yyyy-MM-dd '| Time:' HH:mm:ss aaa", Locale.getDefault()).format(new Date());
+        dateLive.setValue(currentDateTime);
         getDateTime();
     }
 

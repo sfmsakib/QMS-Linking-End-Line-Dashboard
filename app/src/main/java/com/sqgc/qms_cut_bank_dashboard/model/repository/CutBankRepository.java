@@ -30,6 +30,7 @@ public class CutBankRepository {
 //        cutBankResponse.onDataFetchedSuccess(cutBankModelArrayListDemo);
 
 
+        callApi(cutBankResponse);
         callAPIWithDelay(cutBankResponse);
 
 
@@ -40,7 +41,7 @@ public class CutBankRepository {
             @Override
             public void run() {
                 callApi(cutBankResponse);
-                //callAPIWithDelay(cutBankResponse);
+                callAPIWithDelay(cutBankResponse);
             }
         }, 50000);
     }
