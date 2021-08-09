@@ -69,7 +69,7 @@ public class CutBankViewModel extends AndroidViewModel {
         //String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         //String finalValue = String.valueOf("Date: "+currentDate+" | Time: "+currentTime);
 
-        String currentDateTime = new SimpleDateFormat("'Date:' yyyy-MM-dd '| Time:' HH:mm:ss aaa", Locale.getDefault()).format(new Date());
+        String currentDateTime = new SimpleDateFormat("'Date:' yyyy-MM-dd '| Time:' hh:mm:ss aaa", Locale.getDefault()).format(new Date());
         dateLive.setValue(currentDateTime);
         getDateTime();
     }
