@@ -62,7 +62,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".75"
+                android:layout_weight="1"
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:padding="2dp"
@@ -92,7 +92,7 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1.75"
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:padding="2dp"
@@ -142,10 +142,10 @@
             android:visibility="gone"
             android:background="@color/white">
             <TextView
+                android:id="@+id/tvMsg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Failed To Fetch Data\nPlease wait..."
-                android:textSize="40sp"
+                android:textSize="30sp"
                 android:textColor="@color/red"
                 android:textAlignment="center"/>
         </LinearLayout>

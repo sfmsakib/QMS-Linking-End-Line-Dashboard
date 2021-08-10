@@ -1,4 +1,4 @@
 <resources>
 
-    <style name="Theme.QMSCutBankDashboard" parent="@style/Theme.Leanback" />
+    <style name="Theme.QMSCutBankDashboard" parent="Theme.AppCompat.DayNight.NoActionBar" />
 </resources>

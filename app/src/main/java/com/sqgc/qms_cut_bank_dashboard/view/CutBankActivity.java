@@ -31,6 +31,7 @@ public class CutBankActivity extends FragmentActivity {
     CutBankViewModel cutBankViewModel;
     LinearLayout linearLayout;
     ArrayList<CutBankModel> cutBankModelArrayList = new ArrayList<>();
+    TextView tvMsg;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +44,7 @@ public class CutBankActivity extends FragmentActivity {
 
 
         linearLayout = findViewById(R.id.error_layout);
+        tvMsg = findViewById(R.id.tvMsg);
         lineRecyclerView = findViewById(R.id.rvLine);
         lineRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -55,14 +57,21 @@ public class CutBankActivity extends FragmentActivity {
                 if (cutBankModels!=null){
                     Log.i("CUT_BANK_DASHBOARD","OnChanged:"+cutBankModels.toString());
                     if (cutBankModelArrayList!=null){
-                        cutBankModelArrayList.clear();
-                        cutBankModelArrayList.addAll(cutBankModels);
-                        LineRecyclerViewAdapter lineRecyclerViewAdapter = new LineRecyclerViewAdapter(cutBankModelArrayList, CutBankActivity.this);
-                        lineRecyclerView.setAdapter(lineRecyclerViewAdapter);
-                        linearLayout.setVisibility(View.GONE);
-                        lineRecyclerView.setVisibility(View.VISIBLE);
+                        if (cutBankModels.size() == 0){
+                            linearLayout.setVisibility(View.VISIBLE);
+                            lineRecyclerView.setVisibility(View.GONE);
+                            tvMsg.setText(R.string.no_data_msg);
+                        }else {
+                            cutBankModelArrayList.clear();
+                            cutBankModelArrayList.addAll(cutBankModels);
+                            LineRecyclerViewAdapter lineRecyclerViewAdapter = new LineRecyclerViewAdapter(cutBankModelArrayList, CutBankActivity.this);
+                            lineRecyclerView.setAdapter(lineRecyclerViewAdapter);
+                            linearLayout.setVisibility(View.GONE);
+                            lineRecyclerView.setVisibility(View.VISIBLE);
+                        }
                     }
                 }else {
+                    tvMsg.setText(R.string.failed_msg);
                     lineRecyclerView.setVisibility(View.GONE);
                     linearLayout.setVisibility(View.VISIBLE);
                 }
