@@ -1,9 +1,9 @@
-package com.sqgc.qms_cut_bank_dashboard.model;
+package com.sqgc.qms_end_line_tv_dashboard.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class CutBankModel {
+public class DataModel {
     @SerializedName("ProductionName")
     @Expose
     private String productionUnit;
@@ -26,7 +26,7 @@ public class CutBankModel {
     @Expose
     private int cutBankWip;
 
-    public CutBankModel(String productionUnit, String line, String style, String po, int cutBankIn, int cutBankOut, int cutBankWip) {
+    public DataModel(String productionUnit, String line, String style, String po, int cutBankIn, int cutBankOut, int cutBankWip) {
         this.productionUnit = productionUnit;
         this.line = line;
         this.style = style;

@@ -1,14 +1,13 @@
-package com.sqgc.qms_cut_bank_dashboard.model.repository;
+package com.sqgc.qms_end_line_tv_dashboard.model.repository;
 
 import android.os.Handler;
 import android.util.Log;
 
-import com.sqgc.qms_cut_bank_dashboard.model.CutBankModel;
-import com.sqgc.qms_cut_bank_dashboard.model.dao.ApiInterface;
-import com.sqgc.qms_cut_bank_dashboard.model.dao.CutBankResponse;
-import com.sqgc.qms_cut_bank_dashboard.model.network.ApiClient;
+import com.sqgc.qms_end_line_tv_dashboard.model.DataModel;
+import com.sqgc.qms_end_line_tv_dashboard.model.dao.ApiInterface;
+import com.sqgc.qms_end_line_tv_dashboard.model.dao.CutBankResponse;
+import com.sqgc.qms_end_line_tv_dashboard.model.network.ApiClient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -47,10 +46,10 @@ public class CutBankRepository {
     }
 
     private void callApi(CutBankResponse cutBankResponse) {
-        Call<List<CutBankModel>> getData = apiInterface.getCutBankData();
-        getData.enqueue(new Callback<List<CutBankModel>>() {
+        Call<List<DataModel>> getData = apiInterface.getCutBankData();
+        getData.enqueue(new Callback<List<DataModel>>() {
             @Override
-            public void onResponse(Call<List<CutBankModel>> call, Response<List<CutBankModel>> response) {
+            public void onResponse(Call<List<DataModel>> call, Response<List<DataModel>> response) {
                 if (response.isSuccessful()){
                     if (response.body() != null){
                         cutBankResponse.onDataFetchedSuccess(response.body());
@@ -64,7 +63,7 @@ public class CutBankRepository {
                 }
             }
             @Override
-            public void onFailure(Call<List<CutBankModel>> call, Throwable t) {
+            public void onFailure(Call<List<DataModel>> call, Throwable t) {
                 Log.i("CUT_BANK_DASHBOARD","Failed to fetched data :"+t.getMessage().toString());
                 cutBankResponse.onDataFetchedFailed("Failed to fetched data :"+t.getMessage().toString());
 

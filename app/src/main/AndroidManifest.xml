@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.sqgc.qms_cut_bank_dashboard">
+    package="com.sqgc.qms_end_line_tv_dashboard">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.QMSCutBankDashboard">
         <activity
-            android:name=".view.CutBankActivity"
+            android:name="com.sqgc.qms_end_line_tv_dashboard.view.MainActivity"
             android:exported="true"
             android:icon="@drawable/logo"
             android:banner="@drawable/logo"

@@ -1,4 +1,4 @@
-package com.sqgc.qms_cut_bank_dashboard.model.network;
+package com.sqgc.qms_end_line_tv_dashboard.model.network;
 
 import java.util.concurrent.TimeUnit;
 

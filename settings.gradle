@@ -1,2 +1,2 @@
-rootProject.name = "QMS-Cut-Bank-Dashboard"
+rootProject.name = "QMS-End-Line-Dashboard-Linking"
 include ':app'

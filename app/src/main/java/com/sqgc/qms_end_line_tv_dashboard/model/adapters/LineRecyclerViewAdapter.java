@@ -1,4 +1,4 @@
-package com.sqgc.qms_cut_bank_dashboard.model.adapters;
+package com.sqgc.qms_end_line_tv_dashboard.model.adapters;
 
 
 import android.content.Context;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sqgc.qms_cut_bank_dashboard.R;
-import com.sqgc.qms_cut_bank_dashboard.model.CutBankModel;
+import com.sqgc.qms_end_line_tv_dashboard.R;
+import com.sqgc.qms_end_line_tv_dashboard.model.DataModel;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -19,10 +19,10 @@ import java.util.List;
 
 public class LineRecyclerViewAdapter extends RecyclerView.Adapter<LineRecyclerViewAdapter.ViewHolder> {
 
-    List<CutBankModel> mCutBankModelList;
+    List<DataModel> mCutBankModelList;
     LayoutInflater mInflater;
 
-    public LineRecyclerViewAdapter(List<CutBankModel> cutBankModelList, Context context) {
+    public LineRecyclerViewAdapter(List<DataModel> cutBankModelList, Context context) {
         this.mCutBankModelList = cutBankModelList;
         this.mInflater = LayoutInflater.from(context);
     }

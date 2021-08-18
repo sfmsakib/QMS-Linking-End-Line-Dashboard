@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.sqgc.qms_cut_bank_dashboard"
+        applicationId "com.sqgc.qms_end_line_tv_dashboard"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
@@ -36,5 +36,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:4.9.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
 
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
 
 }
