@@ -52,6 +52,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="2">
                     <TextView
+                        android:id="@+id/lineNumber1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Line-15"
@@ -69,6 +70,7 @@
                     android:layout_marginStart="2.5dp"
                     android:layout_marginEnd="2.5dp">
                     <TextView
+                        android:id="@+id/buyerName1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="H&amp;M"
@@ -107,7 +109,7 @@
                             android:layout_height="match_parent"
                             android:text="P\nR\nO\nD\nU\nC\nT\nI\nO\nN"
                             android:gravity="center"
-                            android:textSize="25sp"
+                            android:textSize="21sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"/>
 
@@ -146,6 +148,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/hourlyTarget1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -180,6 +183,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/actualPcs1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -215,6 +219,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/variance1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -259,6 +264,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/planPcs1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -294,17 +300,18 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/cumActualPcs1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
-                                    android:text="550"
-                                    android:scrollHorizontally="true"
                                     android:ellipsize="end"
-                                    android:maxLines="1"
                                     android:gravity="center"
-                                    android:textSize="35sp"
+                                    android:maxLines="1"
+                                    android:scrollHorizontally="true"
+                                    android:text="550"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textSize="35sp"
+                                    android:textStyle="bold" />
 
 
                             </LinearLayout>
@@ -329,6 +336,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/cumVariance1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -373,6 +381,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/efficiency1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -466,6 +475,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/defectivePcs1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -500,6 +510,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/defectPercentage1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -534,6 +545,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/totalDefect1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -568,6 +580,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/dhu1"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -617,6 +630,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
+                                        android:id="@+id/topDefectName11"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight=".6"
@@ -646,6 +660,7 @@
                                         android:layout_gravity="center_vertical"
                                         android:layout_weight=".3">
                                         <TextView
+                                            android:id="@+id/topDefectPercentage11"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
@@ -664,6 +679,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
+                                        android:id="@+id/topDefectName12"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight=".6"
@@ -693,6 +709,7 @@
                                         android:layout_gravity="center_vertical"
                                         android:layout_weight=".3">
                                         <TextView
+                                            android:id="@+id/topDefectPercentage12"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
@@ -711,6 +728,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
+                                        android:id="@+id/topDefectName13"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight=".6"
@@ -740,6 +758,7 @@
                                         android:layout_gravity="center_vertical"
                                         android:layout_weight=".3">
                                         <TextView
+                                            android:id="@+id/topDefectPercentage13"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
@@ -790,12 +809,13 @@
                 android:weightSum="9">
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_marginStart="2.5dp"
+                    android:layout_marginStart="0dp"
                     android:layout_marginEnd="2.5dp"
                     android:background="@drawable/border_light"
                     android:layout_height="match_parent"
                     android:layout_weight="2">
                     <TextView
+                        android:id="@+id/lineNumber2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Line-15"
@@ -813,6 +833,7 @@
                     android:layout_marginStart="2.5dp"
                     android:layout_marginEnd="2.5dp">
                     <TextView
+                        android:id="@+id/buyerName2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="Sainsbury's"
@@ -831,6 +852,7 @@
                     android:padding="5dp"
                     android:layout_marginEnd="2.5dp">
                     <TextView
+                        android:id="@+id/time"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="1:00pm"
@@ -889,6 +911,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/hourlyTarget2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -923,6 +946,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/actualPcs2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -958,6 +982,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/variance2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -1002,6 +1027,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/planPcs2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -1037,6 +1063,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/cumActualPcs2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -1072,17 +1099,18 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/cumVariance2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
-                                    android:text="450"
-                                    android:scrollHorizontally="true"
                                     android:ellipsize="end"
-                                    android:maxLines="1"
                                     android:gravity="center"
-                                    android:textSize="35sp"
+                                    android:maxLines="1"
+                                    android:scrollHorizontally="true"
+                                    android:text="450"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textSize="35sp"
+                                    android:textStyle="bold" />
 
 
                             </LinearLayout>
@@ -1116,6 +1144,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/efficiency2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -1159,7 +1188,7 @@
                             android:layout_height="match_parent"
                             android:text="P\nR\nO\nD\nU\nC\nT\nI\nO\nN"
                             android:gravity="center"
-                            android:textSize="25sp"
+                            android:textSize="21sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"/>
 
@@ -1207,6 +1236,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/defectivePcs2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -1241,6 +1271,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/defectPercentage2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -1275,6 +1306,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/totalDefect2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -1309,6 +1341,7 @@
                                     android:textStyle="normal"/>
 
                                 <TextView
+                                    android:id="@+id/dhu2"
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
@@ -1358,6 +1391,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
+                                        android:id="@+id/topDefectName21"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight=".6"
@@ -1387,6 +1421,7 @@
                                         android:layout_gravity="center_vertical"
                                         android:layout_weight=".3">
                                         <TextView
+                                            android:id="@+id/topDefectPercentage21"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
@@ -1405,6 +1440,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
+                                        android:id="@+id/topDefectName22"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight=".6"
@@ -1434,6 +1470,7 @@
                                         android:layout_gravity="center_vertical"
                                         android:layout_weight=".3">
                                         <TextView
+                                            android:id="@+id/topDefectPercentage22"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
@@ -1452,6 +1489,7 @@
                                     android:orientation="horizontal">
 
                                     <TextView
+                                        android:id="@+id/topDefectName23"
                                         android:layout_width="0dp"
                                         android:layout_height="match_parent"
                                         android:layout_weight=".6"
@@ -1481,6 +1519,7 @@
                                         android:layout_gravity="center_vertical"
                                         android:layout_weight=".3">
                                         <TextView
+                                            android:id="@+id/topDefectPercentage23"
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"

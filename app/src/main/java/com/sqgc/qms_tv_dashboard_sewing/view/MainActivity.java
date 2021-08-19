@@ -1,6 +1,7 @@
 package com.sqgc.qms_tv_dashboard_sewing.view;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.FragmentActivity;
@@ -235,12 +236,60 @@ public class MainActivity extends FragmentActivity {
 
     BarChart chart1;
     BarChart chart2,chart3,chart4;
+    TextView lineNumber1, buyerName1, hourlyTarget1, actualPcs1, variance1, planPcs1, cumActualPcs1,
+            cumVariance1, efficiency1, defectivePcs1, defectPercentage1, totalDefect1, dhu1,
+            topDefectName11, topDefectName12, topDefectName13, topDefectPercentage11,
+            topDefectPercentage12, topDefectPercentage13;
+
+    TextView lineNumber2, buyerName2, hourlyTarget2, actualPcs2, variance2, planPcs2, cumActualPcs2,
+            cumVariance2, efficiency2, defectivePcs2, defectPercentage2, totalDefect2, dhu2,
+            topDefectName21, topDefectName22, topDefectName23, topDefectPercentage21,
+            topDefectPercentage22, topDefectPercentage23;
 
     private void initialize() {
         chart1 = findViewById(R.id.chart_1);
         chart2 = findViewById(R.id.chart_2);
         chart3 = findViewById(R.id.chart_3);
         chart4 = findViewById(R.id.chart_4);
+        lineNumber1 = findViewById(R.id.lineNumber1);
+        buyerName1= findViewById(R.id.buyerName1);
+        hourlyTarget1= findViewById(R.id.hourlyTarget1);
+        actualPcs1= findViewById(R.id.actualPcs1);
+        variance1= findViewById(R.id.variance1);
+        planPcs1= findViewById(R.id.planPcs1);
+        cumActualPcs1= findViewById(R.id.cumActualPcs1);
+        cumVariance1= findViewById(R.id.cumVariance1);
+        efficiency1= findViewById(R.id.efficiency1);
+        defectivePcs1= findViewById(R.id.defectivePcs1);
+        defectPercentage1= findViewById(R.id.defectPercentage1);
+        totalDefect1= findViewById(R.id.totalDefect1);
+        dhu1= findViewById(R.id.dhu1);
+        topDefectName11= findViewById(R.id.topDefectName11);
+        topDefectName12= findViewById(R.id.topDefectName12);
+        topDefectName13= findViewById(R.id.topDefectName13);
+        topDefectPercentage11= findViewById(R.id.topDefectPercentage11);
+        topDefectPercentage12= findViewById(R.id.topDefectPercentage12);
+        topDefectPercentage13= findViewById(R.id.topDefectPercentage13);
+        lineNumber2 = findViewById(R.id.lineNumber2);
+        buyerName2= findViewById(R.id.buyerName2);
+        hourlyTarget2= findViewById(R.id.hourlyTarget2);
+        actualPcs2= findViewById(R.id.actualPcs2);
+        variance2= findViewById(R.id.variance2);
+        planPcs2= findViewById(R.id.planPcs2);
+        cumActualPcs2= findViewById(R.id.cumActualPcs2);
+        cumVariance2= findViewById(R.id.cumVariance2);
+        efficiency2= findViewById(R.id.efficiency2);
+        defectivePcs2= findViewById(R.id.defectivePcs2);
+        defectPercentage2= findViewById(R.id.defectPercentage2);
+        totalDefect2= findViewById(R.id.totalDefect2);
+        dhu2= findViewById(R.id.dhu2);
+        topDefectName21= findViewById(R.id.topDefectName21);
+        topDefectName22= findViewById(R.id.topDefectName22);
+        topDefectName23= findViewById(R.id.topDefectName23);
+        topDefectPercentage21= findViewById(R.id.topDefectPercentage21);
+        topDefectPercentage22= findViewById(R.id.topDefectPercentage22);
+        topDefectPercentage23= findViewById(R.id.topDefectPercentage23);
+
 
     }
 }
