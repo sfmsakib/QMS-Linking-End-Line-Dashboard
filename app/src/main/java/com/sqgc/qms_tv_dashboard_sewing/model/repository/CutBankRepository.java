@@ -1,12 +1,12 @@
-package com.sqgc.qms_end_line_tv_dashboard.model.repository;
+package com.sqgc.qms_tv_dashboard_sewing.model.repository;
 
 import android.os.Handler;
 import android.util.Log;
 
-import com.sqgc.qms_end_line_tv_dashboard.model.DataModel;
-import com.sqgc.qms_end_line_tv_dashboard.model.dao.ApiInterface;
-import com.sqgc.qms_end_line_tv_dashboard.model.dao.CutBankResponse;
-import com.sqgc.qms_end_line_tv_dashboard.model.network.ApiClient;
+import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
+import com.sqgc.qms_tv_dashboard_sewing.model.dao.ApiInterface;
+import com.sqgc.qms_tv_dashboard_sewing.model.dao.CutBankResponse;
+import com.sqgc.qms_tv_dashboard_sewing.model.network.ApiClient;
 
 import java.util.List;
 

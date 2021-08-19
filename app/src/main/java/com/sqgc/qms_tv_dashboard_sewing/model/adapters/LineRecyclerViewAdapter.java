@@ -1,4 +1,4 @@
-package com.sqgc.qms_end_line_tv_dashboard.model.adapters;
+package com.sqgc.qms_tv_dashboard_sewing.model.adapters;
 
 
 import android.content.Context;
@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sqgc.qms_end_line_tv_dashboard.R;
-import com.sqgc.qms_end_line_tv_dashboard.model.DataModel;
+import com.sqgc.qms_tv_dashboard_sewing.R;
+import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
 
 import org.jetbrains.annotations.NotNull;
 

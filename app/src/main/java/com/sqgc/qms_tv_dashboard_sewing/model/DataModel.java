@@ -1,4 +1,4 @@
-package com.sqgc.qms_end_line_tv_dashboard.model;
+package com.sqgc.qms_tv_dashboard_sewing.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

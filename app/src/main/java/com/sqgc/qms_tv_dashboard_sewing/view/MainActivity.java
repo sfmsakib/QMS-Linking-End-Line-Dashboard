@@ -1,4 +1,4 @@
-package com.sqgc.qms_end_line_tv_dashboard.view;
+package com.sqgc.qms_tv_dashboard_sewing.view;
 
 import android.os.Bundle;
 
@@ -14,8 +14,8 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.sqgc.qms_end_line_tv_dashboard.R;
-import com.sqgc.qms_end_line_tv_dashboard.viewmodel.MainViewModel;
+import com.sqgc.qms_tv_dashboard_sewing.R;
+import com.sqgc.qms_tv_dashboard_sewing.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,6 +38,8 @@ public class MainActivity extends FragmentActivity {
 
         setChartData1();
         setChartData2();
+        setChartData3();
+        setChartData4();
 
 
         mainViewModel.getDateTime().observe(this, new Observer<String>() {
@@ -148,12 +150,97 @@ public class MainActivity extends FragmentActivity {
         chart1.invalidate();
 
     }
+    private void setChartData3() {
+        List<BarEntry> barEntryList = new ArrayList<>();
+        barEntryList.add(new BarEntry(1,53));
+        barEntryList.add(new BarEntry(2,43));
+        barEntryList.add(new BarEntry(3,36));
+
+        BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
+
+        dataSet.setColor(ResourcesCompat.getColor(getResources(),R.color.blue,null));
+        dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+
+        dataSet.setLabel(null);
+        List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","1", "2", "3", "4", "5"));
+
+
+        BarData barData = new BarData(dataSet);
+        chart3.setData(barData);
+        chart3.getDescription().setEnabled(false);
+        chart3.setDrawGridBackground(false);
+        chart3.setDrawBarShadow(false);
+
+
+        YAxis leftAxis = chart3.getAxisLeft();
+        leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+        leftAxis.setEnabled(false);
+
+        chart3.getAxisRight().setEnabled(false);
+
+        XAxis xAxis = chart3.getXAxis();
+        xAxis.setEnabled(true);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawGridLines(false);
+
+
+        chart3.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
+        chart3.getXAxis().setTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+        chart3.getLegend().setEnabled(false);
+
+        chart3.invalidate();
+
+    }
+    private void setChartData4() {
+        List<BarEntry> barEntryList = new ArrayList<>();
+        barEntryList.add(new BarEntry(1,362));
+        barEntryList.add(new BarEntry(2,43));
+        barEntryList.add(new BarEntry(3,362));
+
+        BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
+
+        dataSet.setColor(ResourcesCompat.getColor(getResources(),R.color.blue,null));
+        dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+
+        dataSet.setLabel(null);
+        List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","1", "2", "3", "4", "5"));
+
+
+        BarData barData = new BarData(dataSet);
+        chart4.setData(barData);
+        chart4.getDescription().setEnabled(false);
+        chart4.setDrawGridBackground(false);
+        chart4.setDrawBarShadow(false);
+
+
+        YAxis leftAxis = chart4.getAxisLeft();
+        leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
+        leftAxis.setEnabled(false);
+
+        chart4.getAxisRight().setEnabled(false);
+
+        XAxis xAxis = chart4.getXAxis();
+        xAxis.setEnabled(true);
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setDrawGridLines(false);
+
+
+        chart4.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
+        chart4.getXAxis().setTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+        chart4.getLegend().setEnabled(false);
+
+        chart4.invalidate();
+
+    }
+
     BarChart chart1;
-    BarChart chart2;
+    BarChart chart2,chart3,chart4;
 
     private void initialize() {
         chart1 = findViewById(R.id.chart_1);
         chart2 = findViewById(R.id.chart_2);
+        chart3 = findViewById(R.id.chart_3);
+        chart4 = findViewById(R.id.chart_4);
 
     }
 }

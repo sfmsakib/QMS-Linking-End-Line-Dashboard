@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.sqgc.qms_end_line_tv_dashboard"
+        applicationId "com.sqgc.qms_tv_dashboard_sewing"
         minSdkVersion 24
         targetSdkVersion 30
         versionCode 1

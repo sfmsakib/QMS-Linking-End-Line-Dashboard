@@ -1,6 +1,6 @@
-package com.sqgc.qms_end_line_tv_dashboard.model.dao;
+package com.sqgc.qms_tv_dashboard_sewing.model.dao;
 
-import com.sqgc.qms_end_line_tv_dashboard.model.DataModel;
+import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
 
 import java.util.List;
 

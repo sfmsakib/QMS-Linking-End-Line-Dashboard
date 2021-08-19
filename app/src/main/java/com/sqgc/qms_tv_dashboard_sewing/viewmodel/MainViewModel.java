@@ -1,4 +1,4 @@
-package com.sqgc.qms_end_line_tv_dashboard.viewmodel;
+package com.sqgc.qms_tv_dashboard_sewing.viewmodel;
 
 import android.app.Application;
 import android.os.Handler;
@@ -8,9 +8,9 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.sqgc.qms_end_line_tv_dashboard.model.DataModel;
-import com.sqgc.qms_end_line_tv_dashboard.model.dao.CutBankResponse;
-import com.sqgc.qms_end_line_tv_dashboard.model.repository.CutBankRepository;
+import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
+import com.sqgc.qms_tv_dashboard_sewing.model.dao.CutBankResponse;
+import com.sqgc.qms_tv_dashboard_sewing.model.repository.CutBankRepository;
 
 import org.jetbrains.annotations.NotNull;
 

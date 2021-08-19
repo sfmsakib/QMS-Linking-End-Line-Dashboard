@@ -84,12 +84,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="15"
-                android:weightSum="3.2"
+                android:weightSum="2.5"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2.2"
+                    android:layout_weight="1.5"
                     android:layout_marginBottom="2.5dp"
                     android:background="@color/black"
                     android:orientation="horizontal"
@@ -419,14 +419,15 @@
                         android:layout_marginEnd="2.5dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:text="Q\nU\nA\nL\nI\nT\nY"
                             android:gravity="center"
+                            android:text="Q\nU\nA\nL\nI\nT\nY"
+                            android:textColor="@color/white"
                             android:textSize="16sp"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"/>
+                            android:textStyle="bold" />
 
                     </LinearLayout>
                     <LinearLayout
@@ -435,142 +436,332 @@
                         android:layout_weight="15"
                         android:layout_marginBottom="2.5dp"
                         android:layout_marginTop="2.5dp"
-                        android:orientation="horizontal">
+                        android:weightSum="2"
+                        android:orientation="vertical">
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:layout_marginStart="2.5dp"
-                            android:layout_marginEnd="2.5dp"
-                            android:orientation="vertical"
-                            android:weightSum="3"
-                            android:background="#222222">
+                            android:layout_marginBottom="2.5dp"
+                            android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="Defective Pcs"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:textStyle="normal"/>
+                                android:layout_marginStart="2.5dp"
+                                android:layout_marginEnd="2.5dp"
+                                android:orientation="vertical"
+                                android:weightSum="3"
+                                android:background="#222222">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="2"
-                                android:text="3000"
-                                android:scrollHorizontally="true"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:gravity="center"
-                                android:textSize="35sp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="Defective Pcs"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:text="3000"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:gravity="center"
+                                    android:textSize="35sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"/>
 
 
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="2.5dp"
+                                android:layout_marginEnd="2.5dp"
+                                android:orientation="vertical"
+                                android:background="#222222">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="Defect %"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:text="5.05"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:gravity="center"
+                                    android:textSize="35sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"/>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="2.5dp"
+                                android:layout_marginEnd="2.5dp"
+                                android:orientation="vertical"
+                                android:background="#222222">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="Total Defect"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:text="263"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:gravity="center"
+                                    android:textSize="35sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"/>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="2.5dp"
+                                android:layout_marginEnd="2.5dp"
+                                android:orientation="vertical"
+                                android:background="#222222">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DHU %"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:text="10.1"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:gravity="center"
+                                    android:textSize="35sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"/>
+
+
+                            </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
                             android:layout_weight="1"
+                            android:layout_marginTop="2.5dp"
+                            android:weightSum="4"
+                            android:background="#222222"
                             android:layout_marginStart="2.5dp"
                             android:layout_marginEnd="2.5dp"
-                            android:orientation="vertical"
-                            android:background="#222222">
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5"
+                                android:weightSum="4"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="Top three defects:"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:text="Defect %"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:textStyle="normal"/>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="2"
-                                android:text="5.05"
-                                android:scrollHorizontally="true"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:gravity="center"
-                                android:textSize="35sp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Uncut thread"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
 
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
 
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginStart="2.5dp"
-                            android:layout_marginEnd="2.5dp"
-                            android:orientation="vertical"
-                            android:background="#222222">
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
+                                            android:text="5%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:text="Total Defect"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:textStyle="normal"/>
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Up Down"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="2"
-                                android:text="263"
-                                android:scrollHorizontally="true"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:gravity="center"
-                                android:textSize="35sp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
 
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
+                                            android:text="3%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
 
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginStart="2.5dp"
-                            android:layout_marginEnd="2.5dp"
-                            android:orientation="vertical"
-                            android:background="#222222">
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Wavy"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:text="DHU %"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:textStyle="normal"/>
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="2"
-                                android:text="10.1"
-                                android:scrollHorizontally="true"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:gravity="center"
-                                android:textSize="35sp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
+                                            android:text="1%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
 
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.5">
+
+                                <com.github.mikephil.charting.charts.BarChart
+                                    android:id="@+id/chart_3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </LinearLayout>
 
                         </LinearLayout>
                     </LinearLayout>
@@ -644,7 +835,7 @@
                         android:layout_height="match_parent"
                         android:text="1:00pm"
                         android:gravity="center"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="@color/white"
                         android:textStyle="normal"/>
 
@@ -654,12 +845,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="15"
-                android:weightSum="3.2"
+                android:weightSum="2.5"
                 android:orientation="vertical">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="2.2"
+                    android:layout_weight="1.5"
                     android:layout_marginBottom="2.5dp"
                     android:background="@color/black"
                     android:orientation="horizontal"
@@ -980,152 +1171,343 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:layout_marginTop="2.5dp"
+                    android:layout_marginBottom="2.5dp"
                     android:orientation="horizontal"
                     android:weightSum="16">
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="15"
-                        android:layout_marginBottom="2.5dp"
-                        android:layout_marginTop="2.5dp"
-                        android:orientation="horizontal">
+                        android:weightSum="2"
+                        android:orientation="vertical">
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:layout_marginEnd="2.5dp"
-                            android:orientation="vertical"
-                            android:weightSum="3"
-                            android:background="#222222">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
+                            android:layout_marginBottom="2.5dp"
+                            android:layout_marginTop="2.5dp"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:text="Defective Pcs"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:textStyle="normal"/>
+                                android:layout_marginEnd="2.5dp"
+                                android:orientation="vertical"
+                                android:weightSum="3"
+                                android:background="#222222">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="2"
-                                android:text="3000"
-                                android:scrollHorizontally="true"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:gravity="center"
-                                android:textSize="35sp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="Defective Pcs"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:text="3000"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:gravity="center"
+                                    android:textSize="35sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"/>
 
 
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="2.5dp"
+                                android:layout_marginEnd="2.5dp"
+                                android:orientation="vertical"
+                                android:background="#222222">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="Defect %"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:text="5.05"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:gravity="center"
+                                    android:textSize="35sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"/>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="2.5dp"
+                                android:layout_marginEnd="2.5dp"
+                                android:orientation="vertical"
+                                android:background="#222222">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="Total Defect"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:text="263"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:gravity="center"
+                                    android:textSize="35sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"/>
+
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:layout_marginStart="2.5dp"
+                                android:layout_marginEnd="2.5dp"
+                                android:orientation="vertical"
+                                android:background="#222222">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="DHU %"
+                                    android:gravity="center"
+                                    android:textSize="14sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="2"
+                                    android:text="10.1"
+                                    android:scrollHorizontally="true"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:gravity="center"
+                                    android:textSize="35sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"/>
+
+
+                            </LinearLayout>
                         </LinearLayout>
                         <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:layout_marginStart="2.5dp"
+                            android:layout_marginTop="2.5dp"
+                            android:weightSum="4"
+                            android:background="#222222"
+                            android:layout_marginStart="0dp"
                             android:layout_marginEnd="2.5dp"
-                            android:orientation="vertical"
-                            android:background="#222222">
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1.5"
+                                android:weightSum="4"
+                                android:orientation="vertical">
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_weight="1"
+                                    android:text="Top three defects:"
+                                    android:gravity="center"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/white"
+                                    android:textStyle="normal"/>
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:text="Defect %"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:textStyle="normal"/>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="2"
-                                android:text="5.05"
-                                android:scrollHorizontally="true"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:gravity="center"
-                                android:textSize="35sp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Uncut thread"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
 
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
+                                            android:text="5%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Up Down"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
+                                            android:text="3%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Wavy"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
+                                            android:text="1%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="14sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2.5">
+
+                                <com.github.mikephil.charting.charts.BarChart
+                                    android:id="@+id/chart_4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"/>
+                            </LinearLayout>
 
                         </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginStart="2.5dp"
-                            android:layout_marginEnd="2.5dp"
-                            android:orientation="vertical"
-                            android:background="#222222">
 
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:text="Total Defect"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:textStyle="normal"/>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="2"
-                                android:text="263"
-                                android:scrollHorizontally="true"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:gravity="center"
-                                android:textSize="35sp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
-
-
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginStart="2.5dp"
-                            android:layout_marginEnd="2.5dp"
-                            android:orientation="vertical"
-                            android:background="#222222">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="1"
-                                android:text="DHU %"
-                                android:gravity="center"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:textStyle="normal"/>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="0dp"
-                                android:layout_weight="2"
-                                android:text="10.1"
-                                android:scrollHorizontally="true"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:gravity="center"
-                                android:textSize="35sp"
-                                android:textColor="@color/white"
-                                android:textStyle="bold"/>
-
-
-                        </LinearLayout>
                     </LinearLayout>
+
                     <LinearLayout
                         android:background="#222222"
                         android:layout_width="0dp"
