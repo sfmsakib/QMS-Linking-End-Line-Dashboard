@@ -10,6 +10,6 @@ import retrofit2.http.Headers;
 
 public interface ApiInterface {
     @Headers("Accept: application/json")
-    @GET("CutBankReports")
-    Call<List<DataModel>> getCutBankData();
+    @GET("DashboardData")
+    Call<List<DataModel>> getDashboardData();
 }

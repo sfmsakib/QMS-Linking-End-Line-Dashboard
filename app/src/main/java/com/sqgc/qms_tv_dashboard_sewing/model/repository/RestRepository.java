@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
 import com.sqgc.qms_tv_dashboard_sewing.model.dao.ApiInterface;
-import com.sqgc.qms_tv_dashboard_sewing.model.dao.CutBankResponse;
+import com.sqgc.qms_tv_dashboard_sewing.model.dao.RestResponse;
 import com.sqgc.qms_tv_dashboard_sewing.model.network.ApiClient;
 
 import java.util.List;
@@ -14,13 +14,13 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CutBankRepository {
+public class RestRepository {
     ApiInterface apiInterface;
-    public CutBankRepository() {
+    public RestRepository() {
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
     }
 
-    public void getCutBankData(CutBankResponse cutBankResponse){
+    public void getDashboardDataModel(RestResponse restResponse){
 //        ArrayList<CutBankModel> cutBankModelArrayListDemo = new ArrayList<>();
 //        cutBankModelArrayListDemo.add(new CutBankModel("Unit1", "Line77","4817-Hileg", "12313124124-TBA-941234", 455,535,1534523));
 //        cutBankModelArrayListDemo.add(new CutBankModel("Unit1", "Line88","4817-Hileg", "12313124124-TBA-933113", 5435,452,12533));
@@ -29,43 +29,43 @@ public class CutBankRepository {
 //        cutBankResponse.onDataFetchedSuccess(cutBankModelArrayListDemo);
 
 
-        callApi(cutBankResponse);
-        callAPIWithDelay(cutBankResponse);
+        callApi(restResponse);
+        callAPIWithDelay(restResponse);
 
 
     }
-    private void callAPIWithDelay(CutBankResponse cutBankResponse){
+    private void callAPIWithDelay(RestResponse restResponse){
         Handler handler =new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                callApi(cutBankResponse);
-                callAPIWithDelay(cutBankResponse);
+                callApi(restResponse);
+                callAPIWithDelay(restResponse);
             }
         }, 50000);
     }
 
-    private void callApi(CutBankResponse cutBankResponse) {
-        Call<List<DataModel>> getData = apiInterface.getCutBankData();
+    private void callApi(RestResponse restResponse) {
+        Call<List<DataModel>> getData = apiInterface.getDashboardData();
         getData.enqueue(new Callback<List<DataModel>>() {
             @Override
             public void onResponse(Call<List<DataModel>> call, Response<List<DataModel>> response) {
                 if (response.isSuccessful()){
                     if (response.body() != null){
-                        cutBankResponse.onDataFetchedSuccess(response.body());
+                        restResponse.onDataFetchedSuccess(response.body());
                     }else {
-                        cutBankResponse.onDataFetchedFailed("Failed to fetched data : Body null");
+                        restResponse.onDataFetchedFailed("Failed to fetched data : Body null");
                         Log.i("CUT_BANK_DASHBOARD","Failed to fetched data : Body null"+response.message());
                     }
                 }else {
-                    cutBankResponse.onDataFetchedFailed("Failed to fetched data : Response fail");
+                    restResponse.onDataFetchedFailed("Failed to fetched data : Response fail");
                     Log.i("CUT_BANK_DASHBOARD"," Failed to fetched data : Response fail"+response.message());
                 }
             }
             @Override
             public void onFailure(Call<List<DataModel>> call, Throwable t) {
                 Log.i("CUT_BANK_DASHBOARD","Failed to fetched data :"+t.getMessage().toString());
-                cutBankResponse.onDataFetchedFailed("Failed to fetched data :"+t.getMessage().toString());
+                restResponse.onDataFetchedFailed("Failed to fetched data :"+t.getMessage().toString());
 
             }
         });

@@ -9,8 +9,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
-import com.sqgc.qms_tv_dashboard_sewing.model.dao.CutBankResponse;
-import com.sqgc.qms_tv_dashboard_sewing.model.repository.CutBankRepository;
+import com.sqgc.qms_tv_dashboard_sewing.model.dao.RestResponse;
+import com.sqgc.qms_tv_dashboard_sewing.model.repository.RestRepository;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -21,28 +21,28 @@ import java.util.Locale;
 
 public class MainViewModel extends AndroidViewModel {
 
-    CutBankRepository cutBankRepository;
+    RestRepository restRepository;
     public MainViewModel(@NonNull @NotNull Application application) {
         super(application);
-        cutBankRepository = new CutBankRepository();
+        restRepository = new RestRepository();
     }
 
 
-    public LiveData<List<DataModel>> getCutBankData(){
-        MutableLiveData<List<DataModel>> cutBankModelLiveData = new MutableLiveData<>();
+    public LiveData<List<DataModel>> getDashboardData(){
+        MutableLiveData<List<DataModel>> dataMutableLiveData = new MutableLiveData<>();
 
-        cutBankRepository.getCutBankData(new CutBankResponse() {
+        restRepository.getDashboardDataModel(new RestResponse() {
             @Override
-            public void onDataFetchedSuccess(List<DataModel> cutBankModel) {
-                cutBankModelLiveData.setValue(cutBankModel);
+            public void onDataFetchedSuccess(List<DataModel> dataModelList) {
+                dataMutableLiveData.setValue(dataModelList);
             }
 
             @Override
             public void onDataFetchedFailed(String msg) {
-                cutBankModelLiveData.setValue(null);
+                dataMutableLiveData.setValue(null);
             }
         });
-        return cutBankModelLiveData;
+        return dataMutableLiveData;
     }
     MutableLiveData<String> dateLive = new MutableLiveData<>();
     public LiveData<String> getDateTime(){
@@ -63,7 +63,7 @@ public class MainViewModel extends AndroidViewModel {
         //String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
         //String finalValue = String.valueOf("Date: "+currentDate+" | Time: "+currentTime);
 
-        String currentDateTime = new SimpleDateFormat("'Date:' yyyy-MM-dd '| Time:' hh:mm:ss aaa", Locale.getDefault()).format(new Date());
+        String currentDateTime = new SimpleDateFormat("hh:mm aaa", Locale.getDefault()).format(new Date());
         dateLive.setValue(currentDateTime);
         getDateTime();
     }

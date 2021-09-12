@@ -39,7 +39,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:src="@drawable/sq_logo"
+                        android:src="@drawable/qmes_logo"
                         android:scaleType="centerInside"
                         android:contentDescription="@string/sq_logo" />
 
@@ -109,7 +109,7 @@
                             android:layout_height="match_parent"
                             android:text="P\nR\nO\nD\nU\nC\nT\nI\nO\nN"
                             android:gravity="center"
-                            android:textSize="21sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"/>
 
@@ -250,33 +250,83 @@
                                 android:layout_marginStart="2.5dp"
                                 android:layout_marginEnd="2.5dp"
                                 android:orientation="vertical"
-                                android:weightSum="3"
-                                android:background="#222222">
-
-                                <TextView
+                                android:weightSum="2">
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="1"
-                                    android:text="Plan Pcs"
-                                    android:gravity="center"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="normal"/>
+                                    android:paddingStart="2.5dp"
+                                    android:paddingEnd="2.5dp"
+                                    android:layout_marginBottom="1.5dp"
+                                    android:layout_marginTop="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="3"
+                                    android:background="#222222">
 
-                                <TextView
-                                    android:id="@+id/planPcs1"
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="Planned Pcs."
+                                        android:gravity="center"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="normal"/>
+
+                                    <TextView
+                                        android:id="@+id/planPcs1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="1000"
+                                        android:scrollHorizontally="true"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:gravity="center"
+                                        android:textSize="22sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+
+
+                                </LinearLayout>
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
-                                    android:layout_weight="2"
-                                    android:text="1000"
-                                    android:scrollHorizontally="true"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
-                                    android:gravity="center"
-                                    android:textSize="35sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:layout_weight="1"
+                                    android:paddingStart="2.5dp"
+                                    android:paddingEnd="2.5dp"
+                                    android:layout_marginTop="1.5dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="3"
+                                    android:background="#222222">
 
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="Cum Planned Pcs"
+                                        android:gravity="center"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="normal"/>
+
+                                    <TextView
+                                        android:id="@+id/cumPlannedPcs1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="600"
+                                        android:scrollHorizontally="true"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:gravity="center"
+                                        android:textSize="22sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+
+
+                                </LinearLayout>
 
                             </LinearLayout>
                             <LinearLayout
@@ -322,33 +372,83 @@
                                 android:layout_marginStart="2.5dp"
                                 android:layout_marginEnd="2.5dp"
                                 android:orientation="vertical"
-                                android:weightSum="3"
-                                android:background="#222222">
-
-                                <TextView
+                                android:weightSum="2">
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="1"
-                                    android:text="Cum Variance"
-                                    android:gravity="center"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="normal"/>
+                                    android:paddingStart="2.5dp"
+                                    android:paddingEnd="2.5dp"
+                                    android:layout_marginBottom="1.5dp"
+                                    android:layout_marginTop="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="3"
+                                    android:background="#222222">
 
-                                <TextView
-                                    android:id="@+id/cumVariance1"
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="Balance to Produce"
+                                        android:gravity="center"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="normal"/>
+
+                                    <TextView
+                                        android:id="@+id/balanceToProduce1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="470"
+                                        android:scrollHorizontally="true"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:gravity="center"
+                                        android:textSize="22sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+
+
+                                </LinearLayout>
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
-                                    android:layout_weight="2"
-                                    android:text="450"
-                                    android:scrollHorizontally="true"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
-                                    android:gravity="center"
-                                    android:textSize="35sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:layout_weight="1"
+                                    android:paddingStart="2.5dp"
+                                    android:paddingEnd="2.5dp"
+                                    android:layout_marginTop="1.5dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="3"
+                                    android:background="#222222">
 
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="Cum Variance"
+                                        android:gravity="center"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="normal"/>
+
+                                    <TextView
+                                        android:id="@+id/cumVariance1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="70"
+                                        android:scrollHorizontally="true"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:gravity="center"
+                                        android:textSize="22sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+
+
+                                </LinearLayout>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -403,7 +503,7 @@
                                 android:layout_marginStart="2.5dp"
                                 android:layout_marginEnd="2.5dp"
                                 android:background="#222222">
-                                <com.github.mikephil.charting.charts.BarChart
+                                <com.github.mikephil.charting.charts.CombinedChart
                                     android:id="@+id/chart_1"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"/>
@@ -486,7 +586,7 @@
                                     android:gravity="center"
                                     android:textSize="35sp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="normal"/>
 
 
                             </LinearLayout>
@@ -521,7 +621,7 @@
                                     android:gravity="center"
                                     android:textSize="35sp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="normal"/>
 
 
                             </LinearLayout>
@@ -556,7 +656,7 @@
                                     android:gravity="center"
                                     android:textSize="35sp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="normal"/>
 
 
                             </LinearLayout>
@@ -591,7 +691,7 @@
                                     android:gravity="center"
                                     android:textSize="35sp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="normal"/>
 
 
                             </LinearLayout>
@@ -601,27 +701,28 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:layout_marginTop="2.5dp"
-                            android:weightSum="4"
+                            android:weightSum="16"
                             android:background="#222222"
                             android:layout_marginStart="2.5dp"
                             android:layout_marginEnd="2.5dp"
                             android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="T\nO\np\n \n5"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:background="@drawable/border_right_black"
+                                android:textColor="@color/white"
+                                android:textStyle="normal"/>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1.5"
-                                android:weightSum="4"
+                                android:layout_weight="6.5"
+                                android:weightSum="5"
                                 android:orientation="vertical">
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="0dp"
-                                    android:layout_weight="1"
-                                    android:text="Top three defects:"
-                                    android:gravity="center"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="normal"/>
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
@@ -639,7 +740,7 @@
                                         android:scrollHorizontally="true"
                                         android:text="Uncut thread"
                                         android:textColor="@color/white"
-                                        android:textSize="14sp"
+                                        android:textSize="12sp"
                                         android:textStyle="normal" />
 
                                     <TextView
@@ -664,10 +765,10 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
-                                            android:text="5%"
+                                            android:text="9%"
                                             android:textAlignment="textEnd"
                                             android:textColor="@color/white"
-                                            android:textSize="14sp"
+                                            android:textSize="12sp"
                                             android:textStyle="normal" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -688,7 +789,7 @@
                                         android:scrollHorizontally="true"
                                         android:text="Up Down"
                                         android:textColor="@color/white"
-                                        android:textSize="14sp"
+                                        android:textSize="12sp"
                                         android:textStyle="normal" />
 
                                     <TextView
@@ -713,10 +814,10 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
-                                            android:text="3%"
+                                            android:text="6%"
                                             android:textAlignment="textEnd"
                                             android:textColor="@color/white"
-                                            android:textSize="14sp"
+                                            android:textSize="12sp"
                                             android:textStyle="normal" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -737,7 +838,7 @@
                                         android:scrollHorizontally="true"
                                         android:text="Wavy"
                                         android:textColor="@color/white"
-                                        android:textSize="14sp"
+                                        android:textSize="12sp"
                                         android:textStyle="normal" />
 
                                     <TextView
@@ -762,10 +863,108 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
+                                            android:text="4%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="12sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/topDefectName14"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Stretch"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:id="@+id/topDefectPercentage14"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
+                                            android:text="2%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="12sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/topDefectName15"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Stretching"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:id="@+id/topDefectPercentage15"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
                                             android:text="1%"
                                             android:textAlignment="textEnd"
                                             android:textColor="@color/white"
-                                            android:textSize="14sp"
+                                            android:textSize="12sp"
                                             android:textStyle="normal" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -774,9 +973,9 @@
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2.5">
+                                android:layout_weight="8.5">
 
-                                <com.github.mikephil.charting.charts.BarChart
+                                <com.github.mikephil.charting.charts.HorizontalBarChart
                                     android:id="@+id/chart_3"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"/>
@@ -855,7 +1054,6 @@
                         android:id="@+id/time"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="1:00pm"
                         android:gravity="center"
                         android:textSize="16sp"
                         android:textColor="@color/white"
@@ -873,8 +1071,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1.5"
-                    android:layout_marginBottom="2.5dp"
-                    android:background="@color/black"
                     android:orientation="horizontal"
                     android:weightSum="16">
                     <LinearLayout
@@ -1013,33 +1209,83 @@
                                 android:layout_marginStart="0dp"
                                 android:layout_marginEnd="2.5dp"
                                 android:orientation="vertical"
-                                android:weightSum="3"
-                                android:background="#222222">
-
-                                <TextView
+                                android:weightSum="2">
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="1"
-                                    android:text="Plan Pcs"
-                                    android:gravity="center"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="normal"/>
+                                    android:paddingStart="2.5dp"
+                                    android:paddingEnd="2.5dp"
+                                    android:layout_marginBottom="1.5dp"
+                                    android:layout_marginTop="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="3"
+                                    android:background="#222222">
 
-                                <TextView
-                                    android:id="@+id/planPcs2"
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="Planned Pcs."
+                                        android:gravity="center"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="normal"/>
+
+                                    <TextView
+                                        android:id="@+id/planPcs2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="1000"
+                                        android:scrollHorizontally="true"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:gravity="center"
+                                        android:textSize="22sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+
+
+                                </LinearLayout>
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
-                                    android:layout_weight="2"
-                                    android:text="1000"
-                                    android:scrollHorizontally="true"
-                                    android:ellipsize="end"
-                                    android:maxLines="1"
-                                    android:gravity="center"
-                                    android:textSize="35sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:layout_weight="1"
+                                    android:paddingStart="2.5dp"
+                                    android:paddingEnd="2.5dp"
+                                    android:layout_marginTop="1.5dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="3"
+                                    android:background="#222222">
 
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="Cum Planned Pcs"
+                                        android:gravity="center"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="normal"/>
+
+                                    <TextView
+                                        android:id="@+id/cumPlannedPcs2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="600"
+                                        android:scrollHorizontally="true"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:gravity="center"
+                                        android:textSize="22sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+
+
+                                </LinearLayout>
 
                             </LinearLayout>
                             <LinearLayout
@@ -1067,14 +1313,14 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="2"
-                                    android:text="550"
-                                    android:scrollHorizontally="true"
                                     android:ellipsize="end"
-                                    android:maxLines="1"
                                     android:gravity="center"
-                                    android:textSize="35sp"
+                                    android:maxLines="1"
+                                    android:scrollHorizontally="true"
+                                    android:text="550"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textSize="35sp"
+                                    android:textStyle="bold" />
 
 
                             </LinearLayout>
@@ -1085,33 +1331,83 @@
                                 android:layout_marginStart="2.5dp"
                                 android:layout_marginEnd="2.5dp"
                                 android:orientation="vertical"
-                                android:weightSum="3"
-                                android:background="#222222">
-
-                                <TextView
+                                android:weightSum="2">
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
                                     android:layout_weight="1"
-                                    android:text="Cum Variance"
-                                    android:gravity="center"
-                                    android:textSize="16sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="normal"/>
+                                    android:paddingStart="2.5dp"
+                                    android:paddingEnd="2.5dp"
+                                    android:layout_marginBottom="1.5dp"
+                                    android:layout_marginTop="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="3"
+                                    android:background="#222222">
 
-                                <TextView
-                                    android:id="@+id/cumVariance2"
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="Balance to Produce"
+                                        android:gravity="center"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="normal"/>
+
+                                    <TextView
+                                        android:id="@+id/balanceToProduce2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="470"
+                                        android:scrollHorizontally="true"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:gravity="center"
+                                        android:textSize="22sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+
+
+                                </LinearLayout>
+                                <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
-                                    android:layout_weight="2"
-                                    android:ellipsize="end"
-                                    android:gravity="center"
-                                    android:maxLines="1"
-                                    android:scrollHorizontally="true"
-                                    android:text="450"
-                                    android:textColor="@color/white"
-                                    android:textSize="35sp"
-                                    android:textStyle="bold" />
+                                    android:layout_weight="1"
+                                    android:paddingStart="2.5dp"
+                                    android:paddingEnd="2.5dp"
+                                    android:layout_marginTop="1.5dp"
+                                    android:layout_marginBottom="0dp"
+                                    android:orientation="vertical"
+                                    android:weightSum="3"
+                                    android:background="#222222">
 
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="1"
+                                        android:text="Cum Variance"
+                                        android:gravity="center"
+                                        android:textSize="12sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="normal"/>
+
+                                    <TextView
+                                        android:id="@+id/cumVariance2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="0dp"
+                                        android:layout_weight="2"
+                                        android:text="70"
+                                        android:scrollHorizontally="true"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:gravity="center"
+                                        android:textSize="22sp"
+                                        android:textColor="@color/white"
+                                        android:textStyle="bold"/>
+
+
+                                </LinearLayout>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -1166,7 +1462,7 @@
                                 android:layout_marginStart="2.5dp"
                                 android:layout_marginEnd="2.5dp"
                                 android:background="#222222">
-                                <com.github.mikephil.charting.charts.BarChart
+                                <com.github.mikephil.charting.charts.CombinedChart
                                     android:id="@+id/chart_2"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"/>
@@ -1188,7 +1484,7 @@
                             android:layout_height="match_parent"
                             android:text="P\nR\nO\nD\nU\nC\nT\nI\nO\nN"
                             android:gravity="center"
-                            android:textSize="21sp"
+                            android:textSize="16sp"
                             android:textStyle="bold"
                             android:textColor="@color/white"/>
 
@@ -1214,7 +1510,7 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:layout_marginBottom="2.5dp"
-                            android:layout_marginTop="2.5dp"
+                            android:layout_marginTop="5dp"
                             android:orientation="horizontal">
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -1247,7 +1543,7 @@
                                     android:gravity="center"
                                     android:textSize="35sp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="normal"/>
 
 
                             </LinearLayout>
@@ -1282,7 +1578,7 @@
                                     android:gravity="center"
                                     android:textSize="35sp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="normal"/>
 
 
                             </LinearLayout>
@@ -1317,7 +1613,7 @@
                                     android:gravity="center"
                                     android:textSize="35sp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="normal"/>
 
 
                             </LinearLayout>
@@ -1352,7 +1648,7 @@
                                     android:gravity="center"
                                     android:textSize="35sp"
                                     android:textColor="@color/white"
-                                    android:textStyle="bold"/>
+                                    android:textStyle="normal"/>
 
 
                             </LinearLayout>
@@ -1362,27 +1658,28 @@
                             android:layout_height="0dp"
                             android:layout_weight="1"
                             android:layout_marginTop="2.5dp"
-                            android:weightSum="4"
+                            android:weightSum="16"
                             android:background="#222222"
                             android:layout_marginStart="0dp"
                             android:layout_marginEnd="2.5dp"
                             android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:text="T\nO\np\n \n5"
+                                android:gravity="center"
+                                android:textSize="12sp"
+                                android:background="@drawable/border_right_black"
+                                android:textColor="@color/white"
+                                android:textStyle="normal"/>
+
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="1.5"
-                                android:weightSum="4"
+                                android:layout_weight="6.5"
+                                android:weightSum="5"
                                 android:orientation="vertical">
-                                <TextView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="0dp"
-                                    android:layout_weight="1"
-                                    android:text="Top three defects:"
-                                    android:gravity="center"
-                                    android:textSize="18sp"
-                                    android:textColor="@color/white"
-                                    android:textStyle="normal"/>
-
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="0dp"
@@ -1400,7 +1697,7 @@
                                         android:scrollHorizontally="true"
                                         android:text="Uncut thread"
                                         android:textColor="@color/white"
-                                        android:textSize="14sp"
+                                        android:textSize="12sp"
                                         android:textStyle="normal" />
 
                                     <TextView
@@ -1425,10 +1722,10 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
-                                            android:text="5%"
+                                            android:text="9%"
                                             android:textAlignment="textEnd"
                                             android:textColor="@color/white"
-                                            android:textSize="14sp"
+                                            android:textSize="12sp"
                                             android:textStyle="normal" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -1449,7 +1746,7 @@
                                         android:scrollHorizontally="true"
                                         android:text="Up Down"
                                         android:textColor="@color/white"
-                                        android:textSize="14sp"
+                                        android:textSize="12sp"
                                         android:textStyle="normal" />
 
                                     <TextView
@@ -1474,10 +1771,10 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
-                                            android:text="3%"
+                                            android:text="6%"
                                             android:textAlignment="textEnd"
                                             android:textColor="@color/white"
-                                            android:textSize="14sp"
+                                            android:textSize="12sp"
                                             android:textStyle="normal" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -1498,7 +1795,7 @@
                                         android:scrollHorizontally="true"
                                         android:text="Wavy"
                                         android:textColor="@color/white"
-                                        android:textSize="14sp"
+                                        android:textSize="12sp"
                                         android:textStyle="normal" />
 
                                     <TextView
@@ -1523,10 +1820,108 @@
                                             android:layout_width="0dp"
                                             android:layout_height="match_parent"
                                             android:layout_weight=".3"
+                                            android:text="4%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="12sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/topDefectName24"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Stretch"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:id="@+id/topDefectPercentage24"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
+                                            android:text="2%"
+                                            android:textAlignment="textEnd"
+                                            android:textColor="@color/white"
+                                            android:textSize="12sp"
+                                            android:textStyle="normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="0dp"
+                                    android:layout_marginStart="3dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/topDefectName25"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".6"
+                                        android:gravity="center_vertical"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="Stretching"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        android:textStyle="normal" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight=".1"
+                                        android:gravity="end"
+                                        android:maxLines="1"
+                                        android:scrollHorizontally="true"
+                                        android:text="-"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal" />
+
+                                    <LinearLayout
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight=".3">
+                                        <TextView
+                                            android:id="@+id/topDefectPercentage25"
+                                            android:layout_width="0dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight=".3"
                                             android:text="1%"
                                             android:textAlignment="textEnd"
                                             android:textColor="@color/white"
-                                            android:textSize="14sp"
+                                            android:textSize="12sp"
                                             android:textStyle="normal" />
                                     </LinearLayout>
                                 </LinearLayout>
@@ -1535,9 +1930,9 @@
                             <LinearLayout
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
-                                android:layout_weight="2.5">
+                                android:layout_weight="8.5">
 
-                                <com.github.mikephil.charting.charts.BarChart
+                                <com.github.mikephil.charting.charts.HorizontalBarChart
                                     android:id="@+id/chart_4"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"/>
