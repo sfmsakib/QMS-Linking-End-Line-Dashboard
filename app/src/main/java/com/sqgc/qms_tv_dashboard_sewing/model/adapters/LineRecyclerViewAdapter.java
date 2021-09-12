@@ -37,14 +37,14 @@ public class LineRecyclerViewAdapter extends RecyclerView.Adapter<LineRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull @NotNull LineRecyclerViewAdapter.ViewHolder viewHolder, int i) {
-
-        viewHolder.mProductionUnit.setText(mCutBankModelList.get(i).getProductionUnit());
-        viewHolder.mLine.setText(mCutBankModelList.get(i).getLine());
-        viewHolder.mStyle.setText(mCutBankModelList.get(i).getStyle());
-        viewHolder.mPO.setText(mCutBankModelList.get(i).getPo());
-        viewHolder.mCutBankIn.setText(String.valueOf(mCutBankModelList.get(i).getCutBankIn()));
-        viewHolder.mCutBankOut.setText(String.valueOf(mCutBankModelList.get(i).getCutBankOut()));
-        viewHolder.mCutBankWIP.setText(String.valueOf(mCutBankModelList.get(i).getCutBankWip()));
+//
+//        viewHolder.mProductionUnit.setText(mCutBankModelList.get(i).getProductionUnit());
+//        viewHolder.mLine.setText(mCutBankModelList.get(i).getLine());
+//        viewHolder.mStyle.setText(mCutBankModelList.get(i).getStyle());
+//        viewHolder.mPO.setText(mCutBankModelList.get(i).getPo());
+//        viewHolder.mCutBankIn.setText(String.valueOf(mCutBankModelList.get(i).getCutBankIn()));
+//        viewHolder.mCutBankOut.setText(String.valueOf(mCutBankModelList.get(i).getCutBankOut()));
+//        viewHolder.mCutBankWIP.setText(String.valueOf(mCutBankModelList.get(i).getCutBankWip()));
     }
 
     @Override
@@ -56,13 +56,13 @@ public class LineRecyclerViewAdapter extends RecyclerView.Adapter<LineRecyclerVi
         TextView mProductionUnit, mLine, mStyle, mPO, mCutBankIn, mCutBankOut, mCutBankWIP;
         public ViewHolder(View itemView) {
             super(itemView);
-            mProductionUnit = itemView.findViewById(R.id.tvProductionUnit);
-            mLine = itemView.findViewById(R.id.tvLine);
-            mStyle = itemView.findViewById(R.id.tvStyle);
-            mPO = itemView.findViewById(R.id.tvPO);
-            mCutBankIn = itemView.findViewById(R.id.rowTvCutBankIn);
-            mCutBankOut = itemView.findViewById(R.id.rowTvCutBankOut);
-            mCutBankWIP = itemView.findViewById(R.id.rowTvCutBankWip);
+//            mProductionUnit = itemView.findViewById(R.id.tvProductionUnit);
+//            mLine = itemView.findViewById(R.id.tvLine);
+//            mStyle = itemView.findViewById(R.id.tvStyle);
+//            mPO = itemView.findViewById(R.id.tvPO);
+//            mCutBankIn = itemView.findViewById(R.id.rowTvCutBankIn);
+//            mCutBankOut = itemView.findViewById(R.id.rowTvCutBankOut);
+//            mCutBankWIP = itemView.findViewById(R.id.rowTvCutBankWip);
 
         }
     }

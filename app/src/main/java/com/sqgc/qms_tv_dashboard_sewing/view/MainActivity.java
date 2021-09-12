@@ -352,13 +352,14 @@ public class MainActivity extends FragmentActivity {
 
     private void setChartData3() {
         List<BarEntry> barEntryList = new ArrayList<>();
-        barEntryList.add(new BarEntry(1,53));
-        barEntryList.add(new BarEntry(2,43));
-        barEntryList.add(new BarEntry(3,32));
-        barEntryList.add(new BarEntry(4,48));
-        barEntryList.add(new BarEntry(5,34));
+        barEntryList.add(new BarEntry(5,253));
+        barEntryList.add(new BarEntry(4,151));
+        barEntryList.add(new BarEntry(3,78));
+        barEntryList.add(new BarEntry(2,45));
+        barEntryList.add(new BarEntry(1,23));
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
+        //dataSet.setBarSpacePercent(50f);
 
         dataSet.setColor(ResourcesCompat.getColor(getResources(),R.color.pink500,null));
         dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
@@ -374,17 +375,35 @@ public class MainActivity extends FragmentActivity {
         chart3.setDrawBarShadow(false);
         chart3.setFitBars(true);
 
+        //barData.setBarWidth(2f);
+
+
 
         YAxis leftAxis = chart3.getAxisLeft();
         leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
         leftAxis.setEnabled(false);
+        leftAxis.setDrawLabels(false);
+        //leftAxis.needsOffset();
+//        leftAxis.setXOffset(0f);
+//        leftAxis.setYOffset(0f);
+
+
+        //chart3.setViewPortOffsets(0f,0f,0f,0f);
+        chart3.setMinOffset(0f);
 
         chart3.getAxisRight().setEnabled(false);
+        chart3.getAxisRight().setDrawLabels(false);
 
-        XAxis xAxis = chart3.getXAxis();
-        xAxis.setEnabled(true);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(false);
+
+
+
+
+        XAxis xAxisTop = chart3.getXAxis();
+        xAxisTop.setEnabled(true);
+        xAxisTop.setPosition(XAxis.XAxisPosition.TOP);
+        xAxisTop.setDrawGridLines(false);
+        xAxisTop.setDrawAxisLine(false);
+        xAxisTop.setDrawLabels(false);
 
 
         chart3.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
@@ -396,13 +415,14 @@ public class MainActivity extends FragmentActivity {
     }
     private void setChartData4() {
         List<BarEntry> barEntryList = new ArrayList<>();
-        barEntryList.add(new BarEntry(1,32));
-        barEntryList.add(new BarEntry(2,43));
-        barEntryList.add(new BarEntry(3,36));
-        barEntryList.add(new BarEntry(4,76));
-        barEntryList.add(new BarEntry(5,66));
+        barEntryList.add(new BarEntry(5,253));
+        barEntryList.add(new BarEntry(4,151));
+        barEntryList.add(new BarEntry(3,78));
+        barEntryList.add(new BarEntry(2,45));
+        barEntryList.add(new BarEntry(1,23));
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
+        //dataSet.setBarSpacePercent(50f);
 
         dataSet.setColor(ResourcesCompat.getColor(getResources(),R.color.pink500,null));
         dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
@@ -418,54 +438,35 @@ public class MainActivity extends FragmentActivity {
         chart4.setDrawBarShadow(false);
         chart4.setFitBars(true);
 
+        //barData.setBarWidth(2f);
+
+
 
         YAxis leftAxis = chart4.getAxisLeft();
         leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
         leftAxis.setEnabled(false);
-//        leftAxis.setGranularity(1.0f);
-//        leftAxis.setGranularityEnabled(true);
-//        chart4.getAxisLeft().setValueFormatter(new ValueFormatter() {
-//            @Override
-//            public String getFormattedValue(float value) {
-//                return String.valueOf((int) Math.floor(value));
-//            }
-//        });
-//
-//        chart4.getAxisRight().setValueFormatter(new ValueFormatter() {
-//            @Override
-//            public String getFormattedValue(float value) {
-//                return String.valueOf((int) Math.floor(value));
-//            }
-//        });
-//
-//        chart4.getXAxis().setValueFormatter(new ValueFormatter() {
-//            @Override
-//            public String getFormattedValue(float value) {
-//                return String.valueOf((int) Math.floor(value));
-//            }
-//        });
-//
-//        int max = 0; // figure out the max value in your dataset
-//        for(int i = 0; i<barEntryList.size(); i++){
-//            if (max<barEntryList.get(i).getY()){
-//                max =(int) Math.floor(barEntryList.get(i).getY());
-//            }
-//        }
-//        chart4.getAxisLeft().setLabelCount(max);
-//        chart4.getXAxis().setLabelCount(max);
-//        chart4.getAxisRight().setLabelCount(max);
-//
-//        chart4.getAxisRight().setGranularity(1.0f);
-//        chart4.getAxisRight().setGranularityEnabled(true);
+        leftAxis.setDrawLabels(false);
+        //leftAxis.needsOffset();
+//        leftAxis.setXOffset(0f);
+//        leftAxis.setYOffset(0f);
+
+
+        //chart3.setViewPortOffsets(0f,0f,0f,0f);
+        chart4.setMinOffset(0f);
 
         chart4.getAxisRight().setEnabled(false);
+        chart4.getAxisRight().setDrawLabels(false);
 
-        XAxis xAxis = chart4.getXAxis();
-        xAxis.setEnabled(true);
-        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.setDrawGridLines(false);
-        xAxis.setGranularity(1.0f);
-        xAxis.setGranularityEnabled(true);
+
+
+
+
+        XAxis xAxisTop = chart4.getXAxis();
+        xAxisTop.setEnabled(true);
+        xAxisTop.setPosition(XAxis.XAxisPosition.TOP);
+        xAxisTop.setDrawGridLines(false);
+        xAxisTop.setDrawAxisLine(false);
+        xAxisTop.setDrawLabels(false);
 
 
         chart4.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
