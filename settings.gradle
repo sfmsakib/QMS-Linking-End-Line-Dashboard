@@ -1,2 +1,2 @@
-rootProject.name = "QMS-End-Line-Dashboard-Sewing"
+rootProject.name = "QMS-Sewing-End-Line-Dashboard"
 include ':app'

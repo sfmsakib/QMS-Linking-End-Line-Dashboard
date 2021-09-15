@@ -25,6 +25,8 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.sqgc.qms_tv_dashboard_sewing.R;
 import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
+import com.sqgc.qms_tv_dashboard_sewing.model.HourlyActualPcs;
+import com.sqgc.qms_tv_dashboard_sewing.model.TopDefect;
 import com.sqgc.qms_tv_dashboard_sewing.viewmodel.MainViewModel;
 
 import java.util.ArrayList;
@@ -46,11 +48,6 @@ public class MainActivity extends FragmentActivity {
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         initialize();
-
-        setChartData1();
-        setChartData2();
-        setChartData3();
-        setChartData4();
 
 
         mainViewModel.getDateTime().observe(this, new Observer<String>() {
@@ -75,9 +72,80 @@ public class MainActivity extends FragmentActivity {
 
     private void setValue(List<DataModel> dataModels) {
 
+        int colorGreen = ResourcesCompat.getColor(getResources(), R.color.green_alert, null);
+        int colorYellow = ResourcesCompat.getColor(getResources(), R.color.yellow_alert, null);
+        int colorRed = ResourcesCompat.getColor(getResources(), R.color.red_alert, null);
+        int colorWhite = ResourcesCompat.getColor(getResources(), R.color.white, null);
+        int hTarget1 = dataModels.get(0).getHourlyTarget();
+        int aPcs1 = dataModels.get(0).getActualPcs();
+        int var1 = dataModels.get(0).getVariance();
+        int pPcs1 = dataModels.get(0).getPlannedPcs();
+
+        lineNumber1.setText(dataModels.get(0).getLineName()+"");
+        buyerName1.setText(dataModels.get(0).getBuyerName()+"");
+        hourlyTarget1.setText(hTarget1+"");
+        actualPcs1.setText(aPcs1+"");
+        variance1.setText(var1+"");
+        planPcs1.setText(pPcs1+"");
+        cumPlannedPcs1.setText(dataModels.get(0).getCumPlannedPcs()+"");
+        cumActualPcs1.setText(dataModels.get(0).getCumActualPcs()+"");
+        balanceToProduce1.setText(dataModels.get(0).getBalanceToProduce()+"");
+        cumVariance1.setText(dataModels.get(0).getCumVariance()+"");
+        efficiency1.setText(dataModels.get(0).getEfficiency()+"");
+
+        defectivePcs1.setText(dataModels.get(0).getDefectivePcs()+"");
+        defectPercentage1.setText(dataModels.get(0).getDefectPercentage()+"");
+        totalDefect1.setText(dataModels.get(0).getTotalDefect()+"");
+        dhu1.setText(dataModels.get(0).getDhu()+"");
+        topDefectName11.setText(dataModels.get(0).getTopDefects().get(0).getDefectName()+"");
+        topDefectName12.setText(dataModels.get(0).getTopDefects().get(1).getDefectName()+"");
+        topDefectName13.setText(dataModels.get(0).getTopDefects().get(2).getDefectName()+"");
+        topDefectName14.setText(dataModels.get(0).getTopDefects().get(3).getDefectName()+"");
+        topDefectName15.setText(dataModels.get(0).getTopDefects().get(4).getDefectName()+"");
+        topDefectPercentage11.setText(Math.round(dataModels.get(0).getTopDefects().get(0).getDefectPercentage())+"%");
+        topDefectPercentage12.setText(Math.round(dataModels.get(0).getTopDefects().get(1).getDefectPercentage())+"%");
+        topDefectPercentage13.setText(Math.round(dataModels.get(0).getTopDefects().get(2).getDefectPercentage())+"%");
+        topDefectPercentage14.setText(Math.round(dataModels.get(0).getTopDefects().get(3).getDefectPercentage())+"%");
+        topDefectPercentage15.setText(Math.round(dataModels.get(0).getTopDefects().get(4).getDefectPercentage())+"%");
+
+        lineNumber2.setText(dataModels.get(1).getLineName()+"");
+        buyerName2.setText(dataModels.get(1).getBuyerName()+"");
+        hourlyTarget2.setText(dataModels.get(1).getHourlyTarget()+"");
+        actualPcs2.setText(dataModels.get(1).getActualPcs()+"");
+        variance2.setText(dataModels.get(1).getVariance()+"");
+        planPcs2.setText(dataModels.get(1).getPlannedPcs()+"");
+        cumPlannedPcs2.setText(dataModels.get(1).getCumPlannedPcs()+"");
+        cumActualPcs2.setText(dataModels.get(1).getCumActualPcs()+"");
+        balanceToProduce2.setText(dataModels.get(1).getBalanceToProduce()+"");
+        cumVariance2.setText(dataModels.get(1).getCumVariance()+"");
+        efficiency2.setText(dataModels.get(1).getEfficiency()+"");
+
+        defectivePcs2.setText(dataModels.get(1).getDefectivePcs()+"");
+        defectPercentage2.setText(dataModels.get(1).getDefectPercentage()+"");
+        totalDefect2.setText(dataModels.get(1).getTotalDefect()+"");
+        dhu2.setText(dataModels.get(1).getDhu()+"");
+        topDefectName21.setText(dataModels.get(1).getTopDefects().get(0).getDefectName()+"");
+        topDefectName22.setText(dataModels.get(1).getTopDefects().get(1).getDefectName()+"");
+        topDefectName23.setText(dataModels.get(1).getTopDefects().get(2).getDefectName()+"");
+        topDefectName24.setText(dataModels.get(1).getTopDefects().get(3).getDefectName()+"");
+        topDefectName25.setText(dataModels.get(1).getTopDefects().get(4).getDefectName()+"");
+        topDefectPercentage21.setText(Math.round(dataModels.get(1).getTopDefects().get(0).getDefectPercentage())+"%");
+        topDefectPercentage22.setText(Math.round(dataModels.get(1).getTopDefects().get(1).getDefectPercentage())+"%");
+        topDefectPercentage23.setText(Math.round(dataModels.get(1).getTopDefects().get(2).getDefectPercentage())+"%");
+        topDefectPercentage24.setText(Math.round(dataModels.get(1).getTopDefects().get(3).getDefectPercentage())+"%");
+        topDefectPercentage25.setText(Math.round(dataModels.get(1).getTopDefects().get(4).getDefectPercentage())+"%");
+
+
+        setChartData1(dataModels);
+        setChartData2(dataModels);
+        setChartData3(dataModels);
+        setChartData4(dataModels);
+
+
+
     }
 
-    private void setChartData2() {
+    private void setChartData2(List<DataModel> dataModels) {
         chart2.getDescription().setEnabled(false);
         chart2.setDrawGridBackground(false);
         chart2.setDrawBarShadow(false);
@@ -96,8 +164,8 @@ public class MainActivity extends FragmentActivity {
 
         CombinedData data = new CombinedData();
 
-        data.setData(generateLineData2());
-        data.setData(generateBarData2());
+        data.setData(generateLineData2(dataModels));
+        data.setData(generateBarData2(dataModels));
 //        data.setData(generateBubbleData());
 //        data.setData(generateScatterData());
 //        data.setData(generateCandleData());
@@ -123,7 +191,14 @@ public class MainActivity extends FragmentActivity {
 
         xAxis.setAxisMaximum(data.getXMax() + 0.25f);
 
-        List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","9-10", "10-11", "11-12", "12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"));
+        ArrayList<String> xAxisValues = new ArrayList<>();
+        List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
+
+        for(int i = 0; i < hourlyActualPcs.size(); i++){
+            xAxisValues.add(hourlyActualPcs.get(i).getHourName());
+        }
+
+        //List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","9-10", "10-11", "11-12", "12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"));
         chart2.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
         chart2.getXAxis().setTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
         chart2.getLegend().setEnabled(false);
@@ -135,21 +210,15 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-    private BarData generateBarData2() {
+    private BarData generateBarData2(List<DataModel> dataModels) {
 
 
         ArrayList<BarEntry> barEntryList = new ArrayList<>();
-        barEntryList.add(new BarEntry(1,100, "9-10"));
-        barEntryList.add(new BarEntry(2,300, "10-11"));
-        barEntryList.add(new BarEntry(3,400, "11-12"));
-        barEntryList.add(new BarEntry(4,200, "9-10"));
-        barEntryList.add(new BarEntry(5,390, "9-10"));
-        barEntryList.add(new BarEntry(6,100, "9-10"));
-        barEntryList.add(new BarEntry(7,600, "9-10"));
-        barEntryList.add(new BarEntry(8,200, "9-10"));
-        barEntryList.add(new BarEntry(9,600, "9-10"));
-        barEntryList.add(new BarEntry(10,200, "9-10"));
-        barEntryList.add(new BarEntry(11,300, "9-10"));
+        List<HourlyActualPcs> hourlyActualPcs = dataModels.get(1).getHourlyActualPcsList();
+
+        for(int i = 0; i < hourlyActualPcs.size(); i++){
+            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+        }
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
 
@@ -167,8 +236,8 @@ public class MainActivity extends FragmentActivity {
         BarData barData = new BarData(dataSet);
         //barData.setBarWidth(barWidth);
 
-        chart2.getXAxis().setSpaceMin(barData.getBarWidth() / 2f);
-        chart2.getXAxis().setSpaceMax(barData.getBarWidth() / 2f);
+        chart2.getXAxis().setSpaceMin(barData.getBarWidth()/2f);
+        //chart2.getXAxis().setSpaceMax(barData.getBarWidth() / 1f);
 
         // make this BarData object grouped
         //barData.groupBars(0, groupSpace, barSpace); // start at x = 0
@@ -177,24 +246,17 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-    private LineData generateLineData2() {
+    private LineData generateLineData2(List<DataModel> dataModels) {
 
 
         LineData d = new LineData();
 
         ArrayList<Entry> lineEntryList = new ArrayList<>();
-        lineEntryList.add(new Entry(1,100, "9-10"));
-        lineEntryList.add(new Entry(2,300, "10-11"));
-        lineEntryList.add(new Entry(3,400, "11-12"));
-        lineEntryList.add(new Entry(4,200, "9-10"));
-        lineEntryList.add(new Entry(5,390, "9-10"));
-        lineEntryList.add(new Entry(6,100, "9-10"));
-        lineEntryList.add(new Entry(7,600, "9-10"));
-        lineEntryList.add(new Entry(8,200, "9-10"));
-        lineEntryList.add(new Entry(9,600, "9-10"));
-        lineEntryList.add(new Entry(10,200, "9-10"));
-        lineEntryList.add(new Entry(11,300, "9-10"));
+        List<HourlyActualPcs> hourlyActualPcs = dataModels.get(1).getHourlyActualPcsList();
 
+        for(int i = 0; i < hourlyActualPcs.size(); i++){
+            lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+        }
 
         LineDataSet set = new LineDataSet(lineEntryList, "Line DataSet");
         set.setColor(ResourcesCompat.getColor(getResources(),R.color.green_line,null));
@@ -217,7 +279,7 @@ public class MainActivity extends FragmentActivity {
     }
 
 
-    private void setChartData1() {
+    private void setChartData1(List<DataModel> dataModels) {
 
         chart1.getDescription().setEnabled(false);
         chart1.setDrawGridBackground(false);
@@ -237,8 +299,8 @@ public class MainActivity extends FragmentActivity {
 
         CombinedData data = new CombinedData();
 
-        data.setData(generateLineData1());
-        data.setData(generateBarData1());
+        data.setData(generateLineData1(dataModels));
+        data.setData(generateBarData1(dataModels));
 //        data.setData(generateBubbleData());
 //        data.setData(generateScatterData());
 //        data.setData(generateCandleData());
@@ -264,7 +326,19 @@ public class MainActivity extends FragmentActivity {
 
         xAxis.setAxisMaximum(data.getXMax() + 0.25f);
 
-        List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","9-10", "10-11", "11-12", "12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"));
+
+        ArrayList<String> xAxisValues = new ArrayList<>();
+        List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
+
+        for(int i = 0; i < hourlyActualPcs.size(); i++){
+            xAxisValues.add(hourlyActualPcs.get(i).getHourName());
+            Log.i("DASHBOARD_LOG","Hour index:"+i+" Hour name: "+hourlyActualPcs.get(i).getHourName());
+        }
+        Log.i("DASHBOARD_LOG",xAxisValues.toString());
+
+
+
+        //List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","9-10", "10-11", "11-12", "12-1", "1-2", "2-3","3-4", "4-5", "5-6", "6-7", "7-8"));
         chart1.getXAxis().setValueFormatter(new IndexAxisValueFormatter(xAxisValues));
         chart1.getXAxis().setTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
         chart1.getLegend().setEnabled(false);
@@ -275,20 +349,15 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-    private BarData generateBarData1() {
+    private BarData generateBarData1(List<DataModel> dataModels) {
+
 
         ArrayList<BarEntry> barEntryList = new ArrayList<>();
-        barEntryList.add(new BarEntry(1,300, "9-10"));
-        barEntryList.add(new BarEntry(2,200, "10-11"));
-        barEntryList.add(new BarEntry(3,100, "11-12"));
-        barEntryList.add(new BarEntry(4,300, "9-10"));
-        barEntryList.add(new BarEntry(5,0, "9-10"));
-        barEntryList.add(new BarEntry(6,400, "9-10"));
-        barEntryList.add(new BarEntry(7,200, "9-10"));
-        barEntryList.add(new BarEntry(8,100, "9-10"));
-        barEntryList.add(new BarEntry(9,300, "9-10"));
-        barEntryList.add(new BarEntry(10,200, "9-10"));
-        barEntryList.add(new BarEntry(11,300, "9-10"));
+        List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
+
+        for(int i = 0; i < hourlyActualPcs.size(); i++){
+            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+        }
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
 
@@ -315,22 +384,16 @@ public class MainActivity extends FragmentActivity {
         return barData;
     }
 
-    private LineData generateLineData1() {
+    private LineData generateLineData1(List<DataModel> dataModels) {
 
         LineData d = new LineData();
 
         ArrayList<Entry> lineEntryList = new ArrayList<>();
-        lineEntryList.add(new Entry(1,300, "9-10"));
-        lineEntryList.add(new Entry(2,200, "10-11"));
-        lineEntryList.add(new Entry(3,100, "11-12"));
-        lineEntryList.add(new Entry(4,300, "9-10"));
-        lineEntryList.add(new Entry(5,0, "9-10"));
-        lineEntryList.add(new Entry(6,400, "9-10"));
-        lineEntryList.add(new Entry(7,200, "9-10"));
-        lineEntryList.add(new Entry(8,100, "9-10"));
-        lineEntryList.add(new Entry(9,300, "9-10"));
-        lineEntryList.add(new Entry(10,200, "9-10"));
-        lineEntryList.add(new Entry(11,300, "9-10"));
+        List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
+
+        for(int i = 0; i < hourlyActualPcs.size(); i++){
+            lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+        }
 
         LineDataSet set = new LineDataSet(lineEntryList, "Line DataSet");
         set.setColor(ResourcesCompat.getColor(getResources(),R.color.green_line,null));
@@ -350,13 +413,13 @@ public class MainActivity extends FragmentActivity {
 
     }
 
-    private void setChartData3() {
+    private void setChartData3(List<DataModel> dataModels) {
         List<BarEntry> barEntryList = new ArrayList<>();
-        barEntryList.add(new BarEntry(5,253));
-        barEntryList.add(new BarEntry(4,151));
-        barEntryList.add(new BarEntry(3,78));
-        barEntryList.add(new BarEntry(2,45));
-        barEntryList.add(new BarEntry(1,23));
+        barEntryList.add(new BarEntry(5,dataModels.get(0).getTopDefects().get(0).getDefectPcs()));
+        barEntryList.add(new BarEntry(4,dataModels.get(0).getTopDefects().get(1).getDefectPcs()));
+        barEntryList.add(new BarEntry(3,dataModels.get(0).getTopDefects().get(2).getDefectPcs()));
+        barEntryList.add(new BarEntry(2,dataModels.get(0).getTopDefects().get(3).getDefectPcs()));
+        barEntryList.add(new BarEntry(1,dataModels.get(0).getTopDefects().get(4).getDefectPcs()));
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
         //dataSet.setBarSpacePercent(50f);
@@ -365,7 +428,14 @@ public class MainActivity extends FragmentActivity {
         dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
 
         dataSet.setLabel(null);
-        List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","1", "2", "3", "4", "5"));
+        ArrayList<String> xAxisValues = new ArrayList<>();
+        List<TopDefect> topDefectList = dataModels.get(0).getTopDefects();
+
+        for(int i = 0; i < topDefectList.size(); i++){
+            xAxisValues.add(String.valueOf(topDefectList.get(i).getSlNo()));
+        }
+
+        //List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","1", "2", "3", "4", "5"));
 
 
         BarData barData = new BarData(dataSet);
@@ -413,13 +483,13 @@ public class MainActivity extends FragmentActivity {
         chart3.invalidate();
 
     }
-    private void setChartData4() {
+    private void setChartData4(List<DataModel> dataModels) {
         List<BarEntry> barEntryList = new ArrayList<>();
-        barEntryList.add(new BarEntry(5,253));
-        barEntryList.add(new BarEntry(4,151));
-        barEntryList.add(new BarEntry(3,78));
-        barEntryList.add(new BarEntry(2,45));
-        barEntryList.add(new BarEntry(1,23));
+        barEntryList.add(new BarEntry(5,dataModels.get(1).getTopDefects().get(0).getDefectPcs()));
+        barEntryList.add(new BarEntry(4,dataModels.get(1).getTopDefects().get(1).getDefectPcs()));
+        barEntryList.add(new BarEntry(3,dataModels.get(1).getTopDefects().get(2).getDefectPcs()));
+        barEntryList.add(new BarEntry(2,dataModels.get(1).getTopDefects().get(3).getDefectPcs()));
+        barEntryList.add(new BarEntry(1,dataModels.get(1).getTopDefects().get(4).getDefectPcs()));
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
         //dataSet.setBarSpacePercent(50f);
@@ -428,7 +498,16 @@ public class MainActivity extends FragmentActivity {
         dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
 
         dataSet.setLabel(null);
-        List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","1", "2", "3", "4", "5"));
+
+        ArrayList<String> xAxisValues = new ArrayList<>();
+        List<TopDefect> topDefectList = dataModels.get(1).getTopDefects();
+
+        for(int i = 0; i < topDefectList.size(); i++){
+            xAxisValues.add(String.valueOf(topDefectList.get(i).getSlNo()));
+        }
+
+
+        //List<String> xAxisValues = new ArrayList<>(Arrays.asList("0","1", "2", "3", "4", "5"));
 
 
         BarData barData = new BarData(dataSet);

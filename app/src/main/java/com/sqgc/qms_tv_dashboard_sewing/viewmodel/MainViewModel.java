@@ -2,12 +2,14 @@ package com.sqgc.qms_tv_dashboard_sewing.viewmodel;
 
 import android.app.Application;
 import android.os.Handler;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.google.gson.Gson;
 import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
 import com.sqgc.qms_tv_dashboard_sewing.model.dao.RestResponse;
 import com.sqgc.qms_tv_dashboard_sewing.model.repository.RestRepository;
@@ -35,6 +37,11 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public void onDataFetchedSuccess(List<DataModel> dataModelList) {
                 dataMutableLiveData.setValue(dataModelList);
+                Gson gson = new Gson();
+                String json = gson.toJson(dataModelList);
+                Log.i("DASHBOARD_LOG", json);
+                Log.i("DASHBOARD_LOG", dataModelList.get(0).toString());
+                Log.i("DASHBOARD_LOG", dataModelList.get(1).toString());
             }
 
             @Override
