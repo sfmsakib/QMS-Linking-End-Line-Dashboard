@@ -7,7 +7,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "http://10.12.13.164:8022/api/linein/";
+    public static final String BASE_URL = "http://10.12.13.164:8110/api/BasicQMSData/";
 
     private static Retrofit retrofit = null;
 

@@ -36,12 +36,15 @@ public class MainViewModel extends AndroidViewModel {
         restRepository.getDashboardDataModel(new RestResponse() {
             @Override
             public void onDataFetchedSuccess(List<DataModel> dataModelList) {
-                dataMutableLiveData.setValue(dataModelList);
-                Gson gson = new Gson();
-                String json = gson.toJson(dataModelList);
-                Log.i("DASHBOARD_LOG", json);
-                Log.i("DASHBOARD_LOG", dataModelList.get(0).toString());
-                Log.i("DASHBOARD_LOG", dataModelList.get(1).toString());
+                Log.i("DASHBOARD_LOG", "Size:"+String.valueOf(dataModelList.size()));
+                if(!dataModelList.isEmpty() && dataModelList.size()>=1){
+                    dataMutableLiveData.setValue(dataModelList);
+                    Gson gson = new Gson();
+                    String json = gson.toJson(dataModelList);
+                    Log.i("DASHBOARD_LOG json", json);
+                    Log.i("DASHBOARD_LOG 0", dataModelList.get(0).toString());
+                    Log.i("DASHBOARD_LOG 1", dataModelList.get(1).toString());
+                }
             }
 
             @Override

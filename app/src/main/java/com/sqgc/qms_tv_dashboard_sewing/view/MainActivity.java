@@ -1,6 +1,9 @@
 package com.sqgc.qms_tv_dashboard_sewing.view;
 
+import android.content.Context;
+import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -27,8 +30,10 @@ import com.sqgc.qms_tv_dashboard_sewing.R;
 import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
 import com.sqgc.qms_tv_dashboard_sewing.model.HourlyActualPcs;
 import com.sqgc.qms_tv_dashboard_sewing.model.TopDefect;
+import com.sqgc.qms_tv_dashboard_sewing.model.util.Loader;
 import com.sqgc.qms_tv_dashboard_sewing.viewmodel.MainViewModel;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -39,15 +44,24 @@ import java.util.List;
  */
 public class MainActivity extends FragmentActivity {
     MainViewModel mainViewModel;
+    private Loader loader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        loader = new Loader(this);
+        loader.show();
+
 
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
 
         initialize();
+//        Context context = getApplicationContext();
+//        WifiManager wm = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+//        String ip = Formatter.formatIpAddress(wm.getConnectionInfo().getIpAddress());
+//        buyerName1.setText(ip);
+//        Log.i("IP_LOG", ip);
 
 
         mainViewModel.getDateTime().observe(this, new Observer<String>() {
@@ -62,6 +76,9 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onChanged(List<DataModel> dataModels) {
                 if (dataModels != null && !dataModels.isEmpty()){
+                    if (loader != null){
+                        loader.hide();
+                    }
                     Log.i("DASHBOARD_LOG",dataModels.toString());
                     setValue(dataModels);
                 }
@@ -76,73 +93,154 @@ public class MainActivity extends FragmentActivity {
         int colorYellow = ResourcesCompat.getColor(getResources(), R.color.yellow_alert, null);
         int colorRed = ResourcesCompat.getColor(getResources(), R.color.red_alert, null);
         int colorWhite = ResourcesCompat.getColor(getResources(), R.color.white, null);
-        int hTarget1 = dataModels.get(0).getHourlyTarget();
-        int aPcs1 = dataModels.get(0).getActualPcs();
-        int var1 = dataModels.get(0).getVariance();
-        int pPcs1 = dataModels.get(0).getPlannedPcs();
 
-        lineNumber1.setText(dataModels.get(0).getLineName()+"");
-        buyerName1.setText(dataModels.get(0).getBuyerName()+"");
-        hourlyTarget1.setText(hTarget1+"");
-        actualPcs1.setText(aPcs1+"");
-        variance1.setText(var1+"");
-        planPcs1.setText(pPcs1+"");
-        cumPlannedPcs1.setText(dataModels.get(0).getCumPlannedPcs()+"");
-        cumActualPcs1.setText(dataModels.get(0).getCumActualPcs()+"");
-        balanceToProduce1.setText(dataModels.get(0).getBalanceToProduce()+"");
-        cumVariance1.setText(dataModels.get(0).getCumVariance()+"");
-        efficiency1.setText(dataModels.get(0).getEfficiency()+"");
+        int redLimit = 30;
+        int yellowLimit = 70;
+        int greenLimit = 120;
 
-        defectivePcs1.setText(dataModels.get(0).getDefectivePcs()+"");
-        defectPercentage1.setText(dataModels.get(0).getDefectPercentage()+"");
-        totalDefect1.setText(dataModels.get(0).getTotalDefect()+"");
-        dhu1.setText(dataModels.get(0).getDhu()+"");
-        topDefectName11.setText(dataModels.get(0).getTopDefects().get(0).getDefectName()+"");
-        topDefectName12.setText(dataModels.get(0).getTopDefects().get(1).getDefectName()+"");
-        topDefectName13.setText(dataModels.get(0).getTopDefects().get(2).getDefectName()+"");
-        topDefectName14.setText(dataModels.get(0).getTopDefects().get(3).getDefectName()+"");
-        topDefectName15.setText(dataModels.get(0).getTopDefects().get(4).getDefectName()+"");
-        topDefectPercentage11.setText(Math.round(dataModels.get(0).getTopDefects().get(0).getDefectPercentage())+"%");
-        topDefectPercentage12.setText(Math.round(dataModels.get(0).getTopDefects().get(1).getDefectPercentage())+"%");
-        topDefectPercentage13.setText(Math.round(dataModels.get(0).getTopDefects().get(2).getDefectPercentage())+"%");
-        topDefectPercentage14.setText(Math.round(dataModels.get(0).getTopDefects().get(3).getDefectPercentage())+"%");
-        topDefectPercentage15.setText(Math.round(dataModels.get(0).getTopDefects().get(4).getDefectPercentage())+"%");
+        //DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-        lineNumber2.setText(dataModels.get(1).getLineName()+"");
-        buyerName2.setText(dataModels.get(1).getBuyerName()+"");
-        hourlyTarget2.setText(dataModels.get(1).getHourlyTarget()+"");
-        actualPcs2.setText(dataModels.get(1).getActualPcs()+"");
-        variance2.setText(dataModels.get(1).getVariance()+"");
-        planPcs2.setText(dataModels.get(1).getPlannedPcs()+"");
-        cumPlannedPcs2.setText(dataModels.get(1).getCumPlannedPcs()+"");
-        cumActualPcs2.setText(dataModels.get(1).getCumActualPcs()+"");
-        balanceToProduce2.setText(dataModels.get(1).getBalanceToProduce()+"");
-        cumVariance2.setText(dataModels.get(1).getCumVariance()+"");
-        efficiency2.setText(dataModels.get(1).getEfficiency()+"");
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
 
-        defectivePcs2.setText(dataModels.get(1).getDefectivePcs()+"");
-        defectPercentage2.setText(dataModels.get(1).getDefectPercentage()+"");
-        totalDefect2.setText(dataModels.get(1).getTotalDefect()+"");
-        dhu2.setText(dataModels.get(1).getDhu()+"");
-        topDefectName21.setText(dataModels.get(1).getTopDefects().get(0).getDefectName()+"");
-        topDefectName22.setText(dataModels.get(1).getTopDefects().get(1).getDefectName()+"");
-        topDefectName23.setText(dataModels.get(1).getTopDefects().get(2).getDefectName()+"");
-        topDefectName24.setText(dataModels.get(1).getTopDefects().get(3).getDefectName()+"");
-        topDefectName25.setText(dataModels.get(1).getTopDefects().get(4).getDefectName()+"");
-        topDefectPercentage21.setText(Math.round(dataModels.get(1).getTopDefects().get(0).getDefectPercentage())+"%");
-        topDefectPercentage22.setText(Math.round(dataModels.get(1).getTopDefects().get(1).getDefectPercentage())+"%");
-        topDefectPercentage23.setText(Math.round(dataModels.get(1).getTopDefects().get(2).getDefectPercentage())+"%");
-        topDefectPercentage24.setText(Math.round(dataModels.get(1).getTopDefects().get(3).getDefectPercentage())+"%");
-        topDefectPercentage25.setText(Math.round(dataModels.get(1).getTopDefects().get(4).getDefectPercentage())+"%");
+        if (dataModels.get(0).getLineName() != null && dataModels.get(0).getBuyerName() != null){
+
+            int pPcs1 = dataModels.get(0).getPlannedPcs();
+            int var1 = dataModels.get(0).getVariance();
+            int hTarget1 = dataModels.get(0).getHourlyTarget();
+
+            lineNumber1.setText(dataModels.get(0).getLineName()+"");
+            buyerName1.setText(dataModels.get(0).getBuyerName()+"");
+            hourlyTarget1.setText(hTarget1+"");
 
 
-        setChartData1(dataModels);
-        setChartData2(dataModels);
-        setChartData3(dataModels);
-        setChartData4(dataModels);
+            int aPcs1 = dataModels.get(0).getActualPcs();
+            actualPcs1.setText(aPcs1+"");
+
+            float actualPercentage1 = getPercentage(aPcs1,hTarget1);
+
+            Log.i("DASHBOARD_LOG","Percentage:"+actualPercentage1+" actual:"+aPcs1+" hTarget:"+hTarget1);
+            if (actualPercentage1 > redLimit && actualPercentage1 <= yellowLimit){
+                actualPcs1.setTextColor(colorYellow);
+            }else if (actualPercentage1 >= greenLimit){
+                actualPcs1.setTextColor(colorGreen);
+            }else if (actualPercentage1 <= redLimit){
+                actualPcs1.setTextColor(colorRed);
+            }else {
+                actualPcs1.setTextColor(colorWhite);
+            }
+
+
+            variance1.setText(var1+"");
+            planPcs1.setText(pPcs1+"");
+
+            int cumPlannedPcsValue1 = dataModels.get(0).getCumPlannedPcs();
+            int cumActualPcsValue1 = dataModels.get(0).getCumActualPcs();
+
+            float cumActualPercentage1 = getPercentage(cumActualPcsValue1,cumPlannedPcsValue1);
+
+            cumPlannedPcs1.setText(cumPlannedPcsValue1+"");
+            cumActualPcs1.setText(cumActualPcsValue1+"");
+
+            Log.i("DASHBOARD_LOG","Percentage:"+cumActualPercentage1+" cumActualPcsValue1:"+cumActualPcsValue1+" cumPlannedPcsValue1:"+cumPlannedPcsValue1);
+            if (cumActualPercentage1 > redLimit && cumActualPercentage1 <= yellowLimit){
+                cumActualPcs1.setTextColor(colorYellow);
+            }else if (cumActualPercentage1 >= greenLimit){
+                cumActualPcs1.setTextColor(colorGreen);
+            }else if (cumActualPercentage1 <= redLimit){
+                cumActualPcs1.setTextColor(colorRed);
+            }else {
+                cumActualPcs1.setTextColor(colorWhite);
+            }
+
+
+            balanceToProduce1.setText(dataModels.get(0).getBalanceToProduce()+"");
+            cumVariance1.setText(dataModels.get(0).getCumVariance()+"");
+
+            float eff = dataModels.get(0).getEfficiency();
+            String ff = df.format(eff);
+
+            efficiency1.setText(ff+"");
+
+            defectivePcs1.setText(dataModels.get(0).getDefectivePcs()+"");
+
+            String dp1 = df.format(dataModels.get(0).getDefectPercentage());
+            defectPercentage1.setText(dp1+"");
+
+            totalDefect1.setText(dataModels.get(0).getTotalDefect()+"");
+
+            String dhuV1 = df.format(dataModels.get(0).getDhu());
+            dhu1.setText(dhuV1+"");
+
+            if (dataModels.get(0).getTopDefects() != null){
+                topDefectName11.setText(dataModels.get(0).getTopDefects().get(0).getDefectName()+"");
+                topDefectName12.setText(dataModels.get(0).getTopDefects().get(1).getDefectName()+"");
+                topDefectName13.setText(dataModels.get(0).getTopDefects().get(2).getDefectName()+"");
+                topDefectName14.setText(dataModels.get(0).getTopDefects().get(3).getDefectName()+"");
+                topDefectName15.setText(dataModels.get(0).getTopDefects().get(4).getDefectName()+"");
+                topDefectPercentage11.setText(Math.round(dataModels.get(0).getTopDefects().get(0).getDefectPercentage())+"%");
+                topDefectPercentage12.setText(Math.round(dataModels.get(0).getTopDefects().get(1).getDefectPercentage())+"%");
+                topDefectPercentage13.setText(Math.round(dataModels.get(0).getTopDefects().get(2).getDefectPercentage())+"%");
+                topDefectPercentage14.setText(Math.round(dataModels.get(0).getTopDefects().get(3).getDefectPercentage())+"%");
+                topDefectPercentage15.setText(Math.round(dataModels.get(0).getTopDefects().get(4).getDefectPercentage())+"%");
+
+                setChartData3(dataModels);
+            }
+            if (dataModels.get(0).getHourlyActualPcsList() != null){
+                setChartData1(dataModels);
+            }
+        }
+        if (dataModels.get(1).getLineName() != null && dataModels.get(1).getBuyerName() != null){
+            lineNumber2.setText(dataModels.get(1).getLineName()+"");
+            buyerName2.setText(dataModels.get(1).getBuyerName()+"");
+            hourlyTarget2.setText(dataModels.get(1).getHourlyTarget()+"");
+            actualPcs2.setText(dataModels.get(1).getActualPcs()+"");
+            variance2.setText(dataModels.get(1).getVariance()+"");
+            planPcs2.setText(dataModels.get(1).getPlannedPcs()+"");
+            cumPlannedPcs2.setText(dataModels.get(1).getCumPlannedPcs()+"");
+            cumActualPcs2.setText(dataModels.get(1).getCumActualPcs()+"");
+            balanceToProduce2.setText(dataModels.get(1).getBalanceToProduce()+"");
+            cumVariance2.setText(dataModels.get(1).getCumVariance()+"");
+
+            String eff2 = df.format(dataModels.get(1).getEfficiency());
+            efficiency2.setText(eff2+"");
+
+            defectivePcs2.setText(dataModels.get(1).getDefectivePcs()+"");
+
+            String dp2 = df.format(dataModels.get(1).getDefectPercentage());
+            defectPercentage2.setText(dp2+"");
+
+            totalDefect2.setText(dataModels.get(1).getTotalDefect()+"");
+
+            String dhuV2 = df.format(dataModels.get(1).getDhu());
+            dhu2.setText(dhuV2+"");
+
+            if (dataModels.get(1).getTopDefects() != null) {
+                topDefectName21.setText(dataModels.get(1).getTopDefects().get(0).getDefectName()+"");
+                topDefectName22.setText(dataModels.get(1).getTopDefects().get(1).getDefectName()+"");
+                topDefectName23.setText(dataModels.get(1).getTopDefects().get(2).getDefectName()+"");
+                topDefectName24.setText(dataModels.get(1).getTopDefects().get(3).getDefectName()+"");
+                topDefectName25.setText(dataModels.get(1).getTopDefects().get(4).getDefectName()+"");
+                topDefectPercentage21.setText(Math.round(dataModels.get(1).getTopDefects().get(0).getDefectPercentage())+"%");
+                topDefectPercentage22.setText(Math.round(dataModels.get(1).getTopDefects().get(1).getDefectPercentage())+"%");
+                topDefectPercentage23.setText(Math.round(dataModels.get(1).getTopDefects().get(2).getDefectPercentage())+"%");
+                topDefectPercentage24.setText(Math.round(dataModels.get(1).getTopDefects().get(3).getDefectPercentage())+"%");
+                topDefectPercentage25.setText(Math.round(dataModels.get(1).getTopDefects().get(4).getDefectPercentage())+"%");
+                setChartData4(dataModels);
+            }
+            if (dataModels.get(1).getHourlyActualPcsList() != null) {
+                setChartData2(dataModels);
+            }
+
+        }
 
 
 
+    }
+
+    public static float getPercentage(int n, int total) {
+        float proportion = ((float) n) / ((float) total);
+        return proportion * 100;
     }
 
     private void setChartData2(List<DataModel> dataModels) {
@@ -192,7 +290,7 @@ public class MainActivity extends FragmentActivity {
         xAxis.setAxisMaximum(data.getXMax() + 0.25f);
 
         ArrayList<String> xAxisValues = new ArrayList<>();
-        List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
+        List<HourlyActualPcs> hourlyActualPcs = dataModels.get(1).getHourlyActualPcsList();
 
         for(int i = 0; i < hourlyActualPcs.size(); i++){
             xAxisValues.add(hourlyActualPcs.get(i).getHourName());
