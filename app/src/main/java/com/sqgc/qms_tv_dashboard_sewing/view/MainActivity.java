@@ -94,9 +94,13 @@ public class MainActivity extends FragmentActivity {
         int colorRed = ResourcesCompat.getColor(getResources(), R.color.red_alert, null);
         int colorWhite = ResourcesCompat.getColor(getResources(), R.color.white, null);
 
-        int redLimit = 30;
-        int yellowLimit = 70;
-        int greenLimit = 120;
+        int redLimit = 90;
+        int yellowLimit = 95;
+        int greenLimit = 105;
+
+        int redLimitQuality = 5;
+        float yellowLimitQuality = 2.5f;
+        int greenLimitQuality = 0;
 
         //DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
@@ -104,38 +108,47 @@ public class MainActivity extends FragmentActivity {
         df.setMaximumFractionDigits(2);
 
         if (dataModels.get(0).getLineName() != null && dataModels.get(0).getBuyerName() != null){
-
-            int pPcs1 = dataModels.get(0).getPlannedPcs();
-            int var1 = dataModels.get(0).getVariance();
-            int hTarget1 = dataModels.get(0).getHourlyTarget();
-
             lineNumber1.setText(dataModels.get(0).getLineName()+"");
             buyerName1.setText(dataModels.get(0).getBuyerName()+"");
-            hourlyTarget1.setText(hTarget1+"");
 
-
-            int aPcs1 = dataModels.get(0).getActualPcs();
-            actualPcs1.setText(aPcs1+"");
-
-            float actualPercentage1 = getPercentage(aPcs1,hTarget1);
-
-            Log.i("DASHBOARD_LOG","Percentage:"+actualPercentage1+" actual:"+aPcs1+" hTarget:"+hTarget1);
-            if (actualPercentage1 > redLimit && actualPercentage1 <= yellowLimit){
-                actualPcs1.setTextColor(colorYellow);
-            }else if (actualPercentage1 >= greenLimit){
-                actualPcs1.setTextColor(colorGreen);
-            }else if (actualPercentage1 <= redLimit){
-                actualPcs1.setTextColor(colorRed);
-            }else {
-                actualPcs1.setTextColor(colorWhite);
-            }
-
-
-            variance1.setText(var1+"");
-            planPcs1.setText(pPcs1+"");
-
+            int hourlyTargetValue1 = dataModels.get(0).getHourlyTarget();
+            int actualPcsValue1 = dataModels.get(0).getActualPcs();
+            int varianceValue1 = dataModels.get(0).getVariance();
+            int planPcsValue1 = dataModels.get(0).getPlannedPcs();
             int cumPlannedPcsValue1 = dataModels.get(0).getCumPlannedPcs();
             int cumActualPcsValue1 = dataModels.get(0).getCumActualPcs();
+            int balanceToProduceValue1 = planPcsValue1 -  cumActualPcsValue1;
+            int cumVarianceValue1 = dataModels.get(0).getCumVariance();
+            float eff1 = dataModels.get(0).getEfficiency();
+            String efficiencyValue1 = df.format(eff1);
+            int totalDefectValue1 = dataModels.get(0).getTotalDefect();
+
+            int defectivePcsValue1 = dataModels.get(0).getDefectivePcs();
+            float dpValue1 = dataModels.get(0).getDefectPercentage();
+            String defectPercentageValue1 = df.format(dpValue1);
+            float dhuV1 = dataModels.get(0).getDhu();
+            String dhuValue1 = df.format(dhuV1);
+
+            hourlyTarget1.setText(hourlyTargetValue1+"");
+            actualPcs1.setText(actualPcsValue1+"");
+            variance1.setText(varianceValue1+"");
+
+            float actualPercentage1 = getPercentage(actualPcsValue1,hourlyTargetValue1);
+            if (actualPercentage1 > redLimit && actualPercentage1 <= yellowLimit){
+                actualPcs1.setTextColor(colorYellow);
+                variance1.setTextColor(colorYellow);
+            }else if (actualPercentage1 >= greenLimit){
+                actualPcs1.setTextColor(colorGreen);
+                variance1.setTextColor(colorGreen);
+            }else if (actualPercentage1 <= redLimit){
+                actualPcs1.setTextColor(colorRed);
+                variance1.setTextColor(colorRed);
+            }else {
+                actualPcs1.setTextColor(colorWhite);
+                variance1.setTextColor(colorWhite);
+            }
+
+            planPcs1.setText(planPcsValue1+"");
 
             float cumActualPercentage1 = getPercentage(cumActualPcsValue1,cumPlannedPcsValue1);
 
@@ -145,32 +158,60 @@ public class MainActivity extends FragmentActivity {
             Log.i("DASHBOARD_LOG","Percentage:"+cumActualPercentage1+" cumActualPcsValue1:"+cumActualPcsValue1+" cumPlannedPcsValue1:"+cumPlannedPcsValue1);
             if (cumActualPercentage1 > redLimit && cumActualPercentage1 <= yellowLimit){
                 cumActualPcs1.setTextColor(colorYellow);
+                cumVariance1.setTextColor(colorYellow);
             }else if (cumActualPercentage1 >= greenLimit){
                 cumActualPcs1.setTextColor(colorGreen);
+                cumVariance1.setTextColor(colorGreen);
             }else if (cumActualPercentage1 <= redLimit){
                 cumActualPcs1.setTextColor(colorRed);
+                cumVariance1.setTextColor(colorRed);
             }else {
                 cumActualPcs1.setTextColor(colorWhite);
+                cumVariance1.setTextColor(colorWhite);
             }
 
+//            dataModels.get(0).getBalanceToProduce()
+            balanceToProduce1.setText(balanceToProduceValue1+"");
+            cumVariance1.setText(cumVarianceValue1+"");
 
-            balanceToProduce1.setText(dataModels.get(0).getBalanceToProduce()+"");
-            cumVariance1.setText(dataModels.get(0).getCumVariance()+"");
 
-            float eff = dataModels.get(0).getEfficiency();
-            String ff = df.format(eff);
+            efficiency1.setText(efficiencyValue1+"");
+            if (eff1 > redLimit && eff1 <= yellowLimit){
+                efficiency1.setTextColor(colorYellow);
+            }else if (eff1 >= greenLimit){
+                efficiency1.setTextColor(colorGreen);
+            }else if (eff1 <= redLimit){
+                efficiency1.setTextColor(colorRed);
+            }else {
+                efficiency1.setTextColor(colorWhite);
+            }
 
-            efficiency1.setText(ff+"");
+            defectivePcs1.setText(defectivePcsValue1+"");
 
-            defectivePcs1.setText(dataModels.get(0).getDefectivePcs()+"");
+            defectPercentage1.setText(defectPercentageValue1+"");
+            if (dpValue1 > greenLimitQuality && dpValue1 < yellowLimitQuality){
+                defectPercentage1.setTextColor(colorGreen);
+            }else if (dpValue1 >= yellowLimitQuality && dpValue1 < redLimitQuality){
+                defectPercentage1.setTextColor(colorYellow);
+            }else if (dpValue1 >= redLimitQuality){
+                defectPercentage1.setTextColor(colorRed);
+            }else {
+                defectPercentage1.setTextColor(colorWhite);
+            }
 
-            String dp1 = df.format(dataModels.get(0).getDefectPercentage());
-            defectPercentage1.setText(dp1+"");
+            totalDefect1.setText(totalDefectValue1+"");
 
-            totalDefect1.setText(dataModels.get(0).getTotalDefect()+"");
+            dhu1.setText(dhuValue1+"");
+            if (dhuV1 > greenLimitQuality && dhuV1 < yellowLimitQuality){
+                dhu1.setTextColor(colorGreen);
+            }else if (dhuV1 >= yellowLimitQuality && dhuV1 < redLimitQuality){
+                dhu1.setTextColor(colorYellow);
+            }else if (dhuV1 >= redLimitQuality){
+                dhu1.setTextColor(colorRed);
+            }else {
+                dhu1.setTextColor(colorWhite);
+            }
 
-            String dhuV1 = df.format(dataModels.get(0).getDhu());
-            dhu1.setText(dhuV1+"");
 
             if (dataModels.get(0).getTopDefects() != null){
                 topDefectName11.setText(dataModels.get(0).getTopDefects().get(0).getDefectName()+"");
@@ -193,27 +234,110 @@ public class MainActivity extends FragmentActivity {
         if (dataModels.get(1).getLineName() != null && dataModels.get(1).getBuyerName() != null){
             lineNumber2.setText(dataModels.get(1).getLineName()+"");
             buyerName2.setText(dataModels.get(1).getBuyerName()+"");
-            hourlyTarget2.setText(dataModels.get(1).getHourlyTarget()+"");
-            actualPcs2.setText(dataModels.get(1).getActualPcs()+"");
-            variance2.setText(dataModels.get(1).getVariance()+"");
-            planPcs2.setText(dataModels.get(1).getPlannedPcs()+"");
-            cumPlannedPcs2.setText(dataModels.get(1).getCumPlannedPcs()+"");
-            cumActualPcs2.setText(dataModels.get(1).getCumActualPcs()+"");
-            balanceToProduce2.setText(dataModels.get(1).getBalanceToProduce()+"");
-            cumVariance2.setText(dataModels.get(1).getCumVariance()+"");
 
-            String eff2 = df.format(dataModels.get(1).getEfficiency());
-            efficiency2.setText(eff2+"");
 
-            defectivePcs2.setText(dataModels.get(1).getDefectivePcs()+"");
+            int hourlyTargetValue2 = dataModels.get(1).getHourlyTarget();
+            int actualPcsValue2 = dataModels.get(1).getActualPcs();
+            int varianceValue2 = dataModels.get(1).getVariance();
+            int planPcsValue2 = dataModels.get(1).getPlannedPcs();
+            int cumPlannedPcsValue2 = dataModels.get(1).getCumPlannedPcs();
+            int cumActualPcsValue2 = dataModels.get(1).getCumActualPcs();
+            int balanceToProduceValue2 = planPcsValue2 -  cumActualPcsValue2;
+            int cumVarianceValue2 = dataModels.get(1).getCumVariance();
+            float eff2 = dataModels.get(1).getEfficiency();
+            String efficiencyValue2 = df.format(eff2);
 
-            String dp2 = df.format(dataModels.get(1).getDefectPercentage());
-            defectPercentage2.setText(dp2+"");
+            int defectivePcsValue2 = dataModels.get(1).getDefectivePcs();
+            float dpValue2 = dataModels.get(1).getDefectPercentage();
+            String defectPercentageValue2 = df.format(dpValue2);
+            int totalDefectValue2 = dataModels.get(1).getTotalDefect();
+            float dhuV2 = dataModels.get(1).getDhu();
+            String dhuValue2 = df.format(dhuV2);
 
-            totalDefect2.setText(dataModels.get(1).getTotalDefect()+"");
 
-            String dhuV2 = df.format(dataModels.get(1).getDhu());
-            dhu2.setText(dhuV2+"");
+            hourlyTarget2.setText(hourlyTargetValue2+"");
+            actualPcs2.setText(actualPcsValue2+"");
+
+            float actualPercentage2 = getPercentage(actualPcsValue2,hourlyTargetValue2);
+
+            Log.i("DASHBOARD_LOG","Percentage:"+actualPercentage2+" actual:"+actualPcsValue2+" hTarget:"+hourlyTargetValue2);
+            if (actualPercentage2 > redLimit && actualPercentage2 <= yellowLimit){
+                actualPcs2.setTextColor(colorYellow);
+                variance2.setTextColor(colorYellow);
+            }else if (actualPercentage2 >= greenLimit){
+                actualPcs2.setTextColor(colorGreen);
+                variance2.setTextColor(colorGreen);
+            }else if (actualPercentage2 <= redLimit){
+                actualPcs2.setTextColor(colorGreen);
+                variance2.setTextColor(colorGreen);
+            }else {
+                actualPcs2.setTextColor(colorWhite);
+                variance2.setTextColor(colorWhite);
+            }
+
+            variance2.setText(varianceValue2+"");
+            planPcs2.setText(planPcsValue2+"");
+
+            cumPlannedPcs2.setText(cumPlannedPcsValue2+"");
+            float cumActualPercentage2 = getPercentage(cumActualPcsValue2,cumPlannedPcsValue2);
+            cumActualPcs2.setText(cumActualPcsValue2+"");
+            //Log.i("DASHBOARD_LOG","Percentage:"+cumActualPercentage2+" cumActualPcsValue1:"+cumActualPcsValue2+" cumPlannedPcsValue1:"+cumPlannedPcsValue2);
+            if (cumActualPercentage2 > redLimit && cumActualPercentage2 <= yellowLimit){
+                cumActualPcs2.setTextColor(colorYellow);
+                cumVariance2.setTextColor(colorYellow);
+            }else if (cumActualPercentage2 >= greenLimit){
+                cumActualPcs2.setTextColor(colorGreen);
+                cumVariance2.setTextColor(colorGreen);
+            }else if (cumActualPercentage2 <= redLimit){
+                cumActualPcs2.setTextColor(colorRed);
+                cumVariance2.setTextColor(colorRed);
+            }else {
+                cumActualPcs2.setTextColor(colorWhite);
+                cumVariance2.setTextColor(colorWhite);
+            }
+
+            //dataModels.get(1).getBalanceToProduce()
+            balanceToProduce2.setText(balanceToProduceValue2+"");
+
+            cumVariance2.setText(cumVarianceValue2+"");
+
+            efficiency2.setText(efficiencyValue2+"");
+            if (eff2 > redLimit && eff2 <= yellowLimit){
+                efficiency2.setTextColor(colorYellow);
+            }else if (eff2 >= greenLimit){
+                efficiency2.setTextColor(colorGreen);
+            }else if (eff2 <= redLimit){
+                efficiency2.setTextColor(colorRed);
+            }else {
+                efficiency2.setTextColor(colorWhite);
+            }
+
+            defectivePcs2.setText(defectivePcsValue2+"");
+
+            defectPercentage2.setText(defectPercentageValue2+"");
+            if (dpValue2 > greenLimitQuality && dpValue2 < yellowLimitQuality){
+                defectPercentage2.setTextColor(colorGreen);
+            }else if (dpValue2 >= yellowLimitQuality && dpValue2 < redLimitQuality){
+                defectPercentage2.setTextColor(colorYellow);
+            }else if (dpValue2 >= redLimitQuality){
+                defectPercentage2.setTextColor(colorRed);
+            }else {
+                defectPercentage2.setTextColor(colorWhite);
+            }
+
+            totalDefect2.setText(totalDefectValue2+"");
+
+            dhu2.setText(dhuValue2+"");
+            if (dhuV2 > greenLimitQuality && dhuV2 < yellowLimitQuality){
+                dhu2.setTextColor(colorGreen);
+            }else if (dhuV2 >= yellowLimitQuality && dhuV2 < redLimitQuality){
+                dhu2.setTextColor(colorYellow);
+            }else if (dhuV2 >= redLimitQuality){
+                dhu2.setTextColor(colorRed);
+            }else {
+                dhu2.setTextColor(colorWhite);
+            }
+
 
             if (dataModels.get(1).getTopDefects() != null) {
                 topDefectName21.setText(dataModels.get(1).getTopDefects().get(0).getDefectName()+"");
