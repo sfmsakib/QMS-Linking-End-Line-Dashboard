@@ -94,12 +94,12 @@ public class MainActivity extends FragmentActivity {
         int colorRed = ResourcesCompat.getColor(getResources(), R.color.red_alert, null);
         int colorWhite = ResourcesCompat.getColor(getResources(), R.color.white, null);
 
-        int redLimit = 90;
-        int yellowLimit = 95;
-        int greenLimit = 105;
+        int redLimit = 80;
+        int yellowLimit = 90;
+        int greenLimit = 100;
 
-        int redLimitQuality = 5;
-        float yellowLimitQuality = 2.5f;
+        int redLimitQuality = 10;
+        float yellowLimitQuality = 5f;
         int greenLimitQuality = 0;
 
         //DecimalFormat decimalFormat = new DecimalFormat("#.##");
@@ -136,16 +136,16 @@ public class MainActivity extends FragmentActivity {
             float actualPercentage1 = getPercentage(actualPcsValue1,hourlyTargetValue1);
             if (actualPercentage1 > redLimit && actualPercentage1 <= yellowLimit){
                 actualPcs1.setTextColor(colorYellow);
-                variance1.setTextColor(colorYellow);
+                //variance1.setTextColor(colorYellow);
             }else if (actualPercentage1 >= greenLimit){
                 actualPcs1.setTextColor(colorGreen);
-                variance1.setTextColor(colorGreen);
+                //variance1.setTextColor(colorGreen);
             }else if (actualPercentage1 <= redLimit){
                 actualPcs1.setTextColor(colorRed);
-                variance1.setTextColor(colorRed);
+                //variance1.setTextColor(colorRed);
             }else {
                 actualPcs1.setTextColor(colorWhite);
-                variance1.setTextColor(colorWhite);
+                //variance1.setTextColor(colorWhite);
             }
 
             planPcs1.setText(planPcsValue1+"");
@@ -158,16 +158,16 @@ public class MainActivity extends FragmentActivity {
             Log.i("DASHBOARD_LOG","Percentage:"+cumActualPercentage1+" cumActualPcsValue1:"+cumActualPcsValue1+" cumPlannedPcsValue1:"+cumPlannedPcsValue1);
             if (cumActualPercentage1 > redLimit && cumActualPercentage1 <= yellowLimit){
                 cumActualPcs1.setTextColor(colorYellow);
-                cumVariance1.setTextColor(colorYellow);
+                //cumVariance1.setTextColor(colorYellow);
             }else if (cumActualPercentage1 >= greenLimit){
                 cumActualPcs1.setTextColor(colorGreen);
-                cumVariance1.setTextColor(colorGreen);
+                //cumVariance1.setTextColor(colorGreen);
             }else if (cumActualPercentage1 <= redLimit){
                 cumActualPcs1.setTextColor(colorRed);
-                cumVariance1.setTextColor(colorRed);
+                //cumVariance1.setTextColor(colorRed);
             }else {
                 cumActualPcs1.setTextColor(colorWhite);
-                cumVariance1.setTextColor(colorWhite);
+                //cumVariance1.setTextColor(colorWhite);
             }
 
 //            dataModels.get(0).getBalanceToProduce()
@@ -176,22 +176,20 @@ public class MainActivity extends FragmentActivity {
 
 
             efficiency1.setText(efficiencyValue1+"");
-            if (eff1 > redLimit && eff1 <= yellowLimit){
-                efficiency1.setTextColor(colorYellow);
-            }else if (eff1 >= greenLimit){
-                efficiency1.setTextColor(colorGreen);
-            }else if (eff1 <= redLimit){
-                efficiency1.setTextColor(colorRed);
-            }else {
-                efficiency1.setTextColor(colorWhite);
-            }
+//            if (eff1 > redLimit && eff1 <= yellowLimit){
+//                efficiency1.setTextColor(colorYellow);
+//            }else if (eff1 >= greenLimit){
+//                efficiency1.setTextColor(colorGreen);
+//            }else if (eff1 <= redLimit){
+//                efficiency1.setTextColor(colorRed);
+//            }else {
+//                efficiency1.setTextColor(colorWhite);
+//            }
 
             defectivePcs1.setText(defectivePcsValue1+"");
 
             defectPercentage1.setText(defectPercentageValue1+"");
-            if (dpValue1 > greenLimitQuality && dpValue1 < yellowLimitQuality){
-                defectPercentage1.setTextColor(colorGreen);
-            }else if (dpValue1 >= yellowLimitQuality && dpValue1 < redLimitQuality){
+            if (dpValue1 >= yellowLimitQuality && dpValue1 < redLimitQuality){
                 defectPercentage1.setTextColor(colorYellow);
             }else if (dpValue1 >= redLimitQuality){
                 defectPercentage1.setTextColor(colorRed);
@@ -202,9 +200,7 @@ public class MainActivity extends FragmentActivity {
             totalDefect1.setText(totalDefectValue1+"");
 
             dhu1.setText(dhuValue1+"");
-            if (dhuV1 > greenLimitQuality && dhuV1 < yellowLimitQuality){
-                dhu1.setTextColor(colorGreen);
-            }else if (dhuV1 >= yellowLimitQuality && dhuV1 < redLimitQuality){
+            if (dhuV1 >= yellowLimitQuality && dhuV1 < redLimitQuality){
                 dhu1.setTextColor(colorYellow);
             }else if (dhuV1 >= redLimitQuality){
                 dhu1.setTextColor(colorRed);
@@ -263,16 +259,16 @@ public class MainActivity extends FragmentActivity {
             Log.i("DASHBOARD_LOG","Percentage:"+actualPercentage2+" actual:"+actualPcsValue2+" hTarget:"+hourlyTargetValue2);
             if (actualPercentage2 > redLimit && actualPercentage2 <= yellowLimit){
                 actualPcs2.setTextColor(colorYellow);
-                variance2.setTextColor(colorYellow);
+                //variance2.setTextColor(colorYellow);
             }else if (actualPercentage2 >= greenLimit){
                 actualPcs2.setTextColor(colorGreen);
-                variance2.setTextColor(colorGreen);
+                //variance2.setTextColor(colorGreen);
             }else if (actualPercentage2 <= redLimit){
-                actualPcs2.setTextColor(colorGreen);
-                variance2.setTextColor(colorGreen);
+                actualPcs2.setTextColor(colorRed);
+                //variance2.setTextColor(colorRed);
             }else {
                 actualPcs2.setTextColor(colorWhite);
-                variance2.setTextColor(colorWhite);
+                //variance2.setTextColor(colorWhite);
             }
 
             variance2.setText(varianceValue2+"");
@@ -284,16 +280,16 @@ public class MainActivity extends FragmentActivity {
             //Log.i("DASHBOARD_LOG","Percentage:"+cumActualPercentage2+" cumActualPcsValue1:"+cumActualPcsValue2+" cumPlannedPcsValue1:"+cumPlannedPcsValue2);
             if (cumActualPercentage2 > redLimit && cumActualPercentage2 <= yellowLimit){
                 cumActualPcs2.setTextColor(colorYellow);
-                cumVariance2.setTextColor(colorYellow);
+                //cumVariance2.setTextColor(colorYellow);
             }else if (cumActualPercentage2 >= greenLimit){
                 cumActualPcs2.setTextColor(colorGreen);
-                cumVariance2.setTextColor(colorGreen);
+                //cumVariance2.setTextColor(colorGreen);
             }else if (cumActualPercentage2 <= redLimit){
                 cumActualPcs2.setTextColor(colorRed);
-                cumVariance2.setTextColor(colorRed);
+                //cumVariance2.setTextColor(colorRed);
             }else {
                 cumActualPcs2.setTextColor(colorWhite);
-                cumVariance2.setTextColor(colorWhite);
+                //cumVariance2.setTextColor(colorWhite);
             }
 
             //dataModels.get(1).getBalanceToProduce()
@@ -302,22 +298,20 @@ public class MainActivity extends FragmentActivity {
             cumVariance2.setText(cumVarianceValue2+"");
 
             efficiency2.setText(efficiencyValue2+"");
-            if (eff2 > redLimit && eff2 <= yellowLimit){
-                efficiency2.setTextColor(colorYellow);
-            }else if (eff2 >= greenLimit){
-                efficiency2.setTextColor(colorGreen);
-            }else if (eff2 <= redLimit){
-                efficiency2.setTextColor(colorRed);
-            }else {
-                efficiency2.setTextColor(colorWhite);
-            }
+//            if (eff2 > redLimit && eff2 <= yellowLimit){
+//                efficiency2.setTextColor(colorYellow);
+//            }else if (eff2 >= greenLimit){
+//                efficiency2.setTextColor(colorGreen);
+//            }else if (eff2 <= redLimit){
+//                efficiency2.setTextColor(colorRed);
+//            }else {
+//                efficiency2.setTextColor(colorWhite);
+//            }
 
             defectivePcs2.setText(defectivePcsValue2+"");
 
             defectPercentage2.setText(defectPercentageValue2+"");
-            if (dpValue2 > greenLimitQuality && dpValue2 < yellowLimitQuality){
-                defectPercentage2.setTextColor(colorGreen);
-            }else if (dpValue2 >= yellowLimitQuality && dpValue2 < redLimitQuality){
+            if (dpValue2 >= yellowLimitQuality && dpValue2 < redLimitQuality){
                 defectPercentage2.setTextColor(colorYellow);
             }else if (dpValue2 >= redLimitQuality){
                 defectPercentage2.setTextColor(colorRed);
@@ -328,9 +322,7 @@ public class MainActivity extends FragmentActivity {
             totalDefect2.setText(totalDefectValue2+"");
 
             dhu2.setText(dhuValue2+"");
-            if (dhuV2 > greenLimitQuality && dhuV2 < yellowLimitQuality){
-                dhu2.setTextColor(colorGreen);
-            }else if (dhuV2 >= yellowLimitQuality && dhuV2 < redLimitQuality){
+            if (dhuV2 >= yellowLimitQuality && dhuV2 < redLimitQuality){
                 dhu2.setTextColor(colorYellow);
             }else if (dhuV2 >= redLimitQuality){
                 dhu2.setTextColor(colorRed);
