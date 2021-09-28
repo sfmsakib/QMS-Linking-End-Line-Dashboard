@@ -84,7 +84,7 @@ public class RestRepository {
                 callApi(restResponse);
                 callAPIWithDelay(restResponse);
             }
-        }, 50000);
+        }, 300000);//5m = 300000, 1m = 60000
     }
 
     private void callApi(RestResponse restResponse) {
