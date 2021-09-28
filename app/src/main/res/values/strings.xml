@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">QMS-Sewing-EndLine-TV-Dashboard</string>
+    <string name="app_name">QMS-Linking-EndLine-TV-Dashboard</string>
     <!-- Error messages -->
     <string name="error_fragment_message">An error occurred</string>
     <string name="dismiss_error">Dismiss</string>
-    <string name="failed_msg">Failed To Fetch Data\nPlease wait...</string>
+    <string name="failed_msg">Failed To Fetch Data\nPlease wait…</string>
     <string name="no_data_msg">No Data Inserted Today</string>
     <string name="sq_logo">SQ Logo</string>
 </resources>

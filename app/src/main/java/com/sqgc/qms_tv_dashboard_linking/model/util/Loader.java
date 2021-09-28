@@ -1,4 +1,4 @@
-package com.sqgc.qms_tv_dashboard_sewing.model.util;
+package com.sqgc.qms_tv_dashboard_linking.model.util;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -6,7 +6,7 @@ import android.view.Window;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.sqgc.qms_tv_dashboard_sewing.R;
+import com.sqgc.qms_tv_dashboard_linking.R;
 
 public class Loader {
 

@@ -1,16 +1,13 @@
-package com.sqgc.qms_tv_dashboard_sewing.model.repository;
+package com.sqgc.qms_tv_dashboard_linking.model.repository;
 
 import android.os.Handler;
 import android.util.Log;
 
-import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
-import com.sqgc.qms_tv_dashboard_sewing.model.HourlyActualPcs;
-import com.sqgc.qms_tv_dashboard_sewing.model.TopDefect;
-import com.sqgc.qms_tv_dashboard_sewing.model.dao.ApiInterface;
-import com.sqgc.qms_tv_dashboard_sewing.model.dao.RestResponse;
-import com.sqgc.qms_tv_dashboard_sewing.model.network.ApiClient;
+import com.sqgc.qms_tv_dashboard_linking.model.DataModel;
+import com.sqgc.qms_tv_dashboard_linking.model.dao.ApiInterface;
+import com.sqgc.qms_tv_dashboard_linking.model.dao.RestResponse;
+import com.sqgc.qms_tv_dashboard_linking.model.network.ApiClient;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;

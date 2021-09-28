@@ -1,4 +1,4 @@
-package com.sqgc.qms_tv_dashboard_sewing.model;
+package com.sqgc.qms_tv_dashboard_linking.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

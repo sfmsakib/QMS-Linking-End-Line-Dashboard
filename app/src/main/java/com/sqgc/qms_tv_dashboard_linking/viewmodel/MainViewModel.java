@@ -1,4 +1,4 @@
-package com.sqgc.qms_tv_dashboard_sewing.viewmodel;
+package com.sqgc.qms_tv_dashboard_linking.viewmodel;
 
 import android.app.Application;
 import android.os.Handler;
@@ -10,9 +10,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.gson.Gson;
-import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
-import com.sqgc.qms_tv_dashboard_sewing.model.dao.RestResponse;
-import com.sqgc.qms_tv_dashboard_sewing.model.repository.RestRepository;
+import com.sqgc.qms_tv_dashboard_linking.model.DataModel;
+import com.sqgc.qms_tv_dashboard_linking.model.dao.RestResponse;
+import com.sqgc.qms_tv_dashboard_linking.model.repository.RestRepository;
 
 import org.jetbrains.annotations.NotNull;
 

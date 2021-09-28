@@ -1,4 +1,4 @@
-package com.sqgc.qms_tv_dashboard_sewing.model.network;
+package com.sqgc.qms_tv_dashboard_linking.model.network;
 
 import java.util.concurrent.TimeUnit;
 

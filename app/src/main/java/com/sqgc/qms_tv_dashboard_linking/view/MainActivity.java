@@ -1,9 +1,6 @@
-package com.sqgc.qms_tv_dashboard_sewing.view;
+package com.sqgc.qms_tv_dashboard_linking.view;
 
-import android.content.Context;
-import android.net.wifi.WifiManager;
 import android.os.Bundle;
-import android.text.format.Formatter;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -12,7 +9,6 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.CombinedChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -25,18 +21,15 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.ValueFormatter;
-import com.sqgc.qms_tv_dashboard_sewing.R;
-import com.sqgc.qms_tv_dashboard_sewing.model.DataModel;
-import com.sqgc.qms_tv_dashboard_sewing.model.HourlyActualPcs;
-import com.sqgc.qms_tv_dashboard_sewing.model.TopDefect;
-import com.sqgc.qms_tv_dashboard_sewing.model.util.Loader;
-import com.sqgc.qms_tv_dashboard_sewing.viewmodel.MainViewModel;
+import com.sqgc.qms_tv_dashboard_linking.R;
+import com.sqgc.qms_tv_dashboard_linking.model.DataModel;
+import com.sqgc.qms_tv_dashboard_linking.model.HourlyActualPcs;
+import com.sqgc.qms_tv_dashboard_linking.model.TopDefect;
+import com.sqgc.qms_tv_dashboard_linking.model.util.Loader;
+import com.sqgc.qms_tv_dashboard_linking.viewmodel.MainViewModel;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /*
