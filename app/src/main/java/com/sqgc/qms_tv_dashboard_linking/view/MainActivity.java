@@ -110,7 +110,8 @@ public class MainActivity extends FragmentActivity {
             int planPcsValue1 = dataModels.get(0).getPlannedPcs();
             int cumPlannedPcsValue1 = dataModels.get(0).getCumPlannedPcs();
             int cumActualPcsValue1 = dataModels.get(0).getCumActualPcs();
-            int balanceToProduceValue1 = planPcsValue1 -  cumActualPcsValue1;
+            int balanceToProduceValue1 = dataModels.get(0).getBalanceToProduce();
+            //int balanceToProduceValue1 = cumActualPcsValue1 - planPcsValue1;
             int cumVarianceValue1 = dataModels.get(0).getCumVariance();
             float eff1 = dataModels.get(0).getEfficiency();
             String efficiencyValue1 = df.format(eff1);
@@ -163,7 +164,6 @@ public class MainActivity extends FragmentActivity {
                 //cumVariance1.setTextColor(colorWhite);
             }
 
-//            dataModels.get(0).getBalanceToProduce()
             balanceToProduce1.setText(balanceToProduceValue1+"");
             cumVariance1.setText(cumVarianceValue1+"");
 
@@ -231,7 +231,8 @@ public class MainActivity extends FragmentActivity {
             int planPcsValue2 = dataModels.get(1).getPlannedPcs();
             int cumPlannedPcsValue2 = dataModels.get(1).getCumPlannedPcs();
             int cumActualPcsValue2 = dataModels.get(1).getCumActualPcs();
-            int balanceToProduceValue2 = planPcsValue2 -  cumActualPcsValue2;
+            int balanceToProduceValue2 = dataModels.get(1).getBalanceToProduce();
+            //int balanceToProduceValue2 = cumActualPcsValue2 - planPcsValue2;
             int cumVarianceValue2 = dataModels.get(1).getCumVariance();
             float eff2 = dataModels.get(1).getEfficiency();
             String efficiencyValue2 = df.format(eff2);
@@ -285,7 +286,6 @@ public class MainActivity extends FragmentActivity {
                 //cumVariance2.setTextColor(colorWhite);
             }
 
-            //dataModels.get(1).getBalanceToProduce()
             balanceToProduce2.setText(balanceToProduceValue2+"");
 
             cumVariance2.setText(cumVarianceValue2+"");
