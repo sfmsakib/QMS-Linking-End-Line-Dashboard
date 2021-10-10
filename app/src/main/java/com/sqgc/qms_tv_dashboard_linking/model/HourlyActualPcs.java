@@ -11,9 +11,14 @@ public class HourlyActualPcs {
     @Expose
     private int hourlyActualPcs;
 
-    public HourlyActualPcs(String hourName, int hourlyActualPcs) {
+    @SerializedName("hourlyTargetPcs")
+    @Expose
+    private int hourlyTargetPcs;
+
+    public HourlyActualPcs(String hourName, int hourlyActualPcs, int hourlyTargetPcs) {
         this.hourName = hourName;
         this.hourlyActualPcs = hourlyActualPcs;
+        this.hourlyTargetPcs = hourlyTargetPcs;
     }
 
     public String getHourName() {
@@ -32,11 +37,20 @@ public class HourlyActualPcs {
         this.hourlyActualPcs = hourlyActualPcs;
     }
 
+    public int getHourlyTargetPcs() {
+        return hourlyTargetPcs;
+    }
+
+    public void setHourlyTargetPcs(int hourlyTargetPcs) {
+        this.hourlyTargetPcs = hourlyTargetPcs;
+    }
+
     @Override
     public String toString() {
         return "HourlyActualPcs{" +
                 "hourName='" + hourName + '\'' +
                 ", hourlyActualPcs=" + hourlyActualPcs +
+                ", hourlyTargetPcs=" + hourlyTargetPcs +
                 '}';
     }
 }

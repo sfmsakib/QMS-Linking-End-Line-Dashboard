@@ -424,8 +424,16 @@ public class MainActivity extends FragmentActivity {
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(1).getHourlyActualPcsList();
 
         for(int i = 0; i < hourlyActualPcs.size(); i++){
-            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyTargetPcs()));
         }
+
+//        for(int i = 0; i < hourlyActualPcs.size(); i++){
+//            if(i == 4 || i == 11){
+//                barEntryList.add(new BarEntry(i, 0));
+//            }else {
+//                barEntryList.add(new BarEntry(i, 136));//hourlyActualPcs.get(i).getHourlyActualPcs()));
+//            }
+//        }
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
 
@@ -434,6 +442,7 @@ public class MainActivity extends FragmentActivity {
         dataSet.setLabel(null);
         dataSet.setValueTextSize(10f);
         dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
+        dataSet.setDrawValues(false);
 
         float groupSpace = 0.06f;
         float barSpace = 0.02f; // x2 dataset
@@ -464,6 +473,13 @@ public class MainActivity extends FragmentActivity {
         for(int i = 0; i < hourlyActualPcs.size(); i++){
             lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
         }
+//        for(int i = 0; i < hourlyActualPcs.size(); i++){
+//            if(i == 4 || i == 11){
+//                lineEntryList.add(new Entry(i, 0));
+//            }else {
+//                lineEntryList.add(new Entry(i, 136));//hourlyActualPcs.get(i).getHourlyActualPcs()));
+//            }
+//        }
 
         LineDataSet set = new LineDataSet(lineEntryList, "Line DataSet");
         set.setColor(ResourcesCompat.getColor(getResources(),R.color.green_line,null));
@@ -472,9 +488,9 @@ public class MainActivity extends FragmentActivity {
         set.setCircleRadius(3f);
         set.setFillColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-        set.setDrawValues(false);
+        //set.setDrawValues(false);
         set.setValueTextSize(10f);
-        set.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+        set.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.line_value,null));
 
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
         d.addDataSet(set);
@@ -563,8 +579,15 @@ public class MainActivity extends FragmentActivity {
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
 
         for(int i = 0; i < hourlyActualPcs.size(); i++){
-            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyTargetPcs()));
         }
+//        for(int i = 0; i < hourlyActualPcs.size(); i++){
+//            if(i == 4 || i == 11){
+//                barEntryList.add(new BarEntry(i, 0));
+//            }else {
+//                barEntryList.add(new BarEntry(i, 91));//hourlyActualPcs.get(i).getHourlyActualPcs()));
+//            }
+//        }
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
 
@@ -573,6 +596,7 @@ public class MainActivity extends FragmentActivity {
         dataSet.setLabel(null);
         dataSet.setValueTextSize(10f);
         dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
+        dataSet.setDrawValues(false);
 
         float groupSpace = 0.06f;
         float barSpace = 0.02f; // x2 dataset
@@ -598,10 +622,17 @@ public class MainActivity extends FragmentActivity {
         ArrayList<Entry> lineEntryList = new ArrayList<>();
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
 
+//        for(int i = 0; i < hourlyActualPcs.size(); i++){
+//            if(i == 4 || i == 11){
+//                lineEntryList.add(new Entry(i, 0));
+//            }else {
+//                lineEntryList.add(new Entry(i, 91));//hourlyActualPcs.get(i).getHourlyActualPcs()));
+//            }
+//        }
+
         for(int i = 0; i < hourlyActualPcs.size(); i++){
             lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
         }
-
         LineDataSet set = new LineDataSet(lineEntryList, "Line DataSet");
         set.setColor(ResourcesCompat.getColor(getResources(),R.color.green_line,null));
         set.setLineWidth(2f);
@@ -609,9 +640,9 @@ public class MainActivity extends FragmentActivity {
         set.setCircleRadius(3f);
         set.setFillColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-        set.setDrawValues(false);
         set.setValueTextSize(10f);
-        set.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+        set.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.line_value,null));
+         //set.setDrawValues(false);
 
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
         d.addDataSet(set);
