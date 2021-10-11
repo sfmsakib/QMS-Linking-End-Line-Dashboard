@@ -21,6 +21,7 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.sqgc.qms_tv_dashboard_linking.R;
 import com.sqgc.qms_tv_dashboard_linking.model.DataModel;
 import com.sqgc.qms_tv_dashboard_linking.model.HourlyActualPcs;
@@ -30,6 +31,7 @@ import com.sqgc.qms_tv_dashboard_linking.viewmodel.MainViewModel;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /*
@@ -388,8 +390,9 @@ public class MainActivity extends FragmentActivity {
         YAxis leftAxis = chart2.getAxisLeft();
         leftAxis.setDrawGridLines(false);
         leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
-        leftAxis.setEnabled(false); //old
-
+        leftAxis.setEnabled(true); //old
+        leftAxis.setTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+        leftAxis.setTextSize(8f);
 
         XAxis xAxis = chart2.getXAxis();
         xAxis.setEnabled(true);
@@ -470,17 +473,16 @@ public class MainActivity extends FragmentActivity {
         ArrayList<Entry> lineEntryList = new ArrayList<>();
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(1).getHourlyActualPcsList();
 
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         for(int i = 0; i < hourlyActualPcs.size(); i++){
-            lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+            if(Integer.parseInt(hourlyActualPcs.get(i).getHourName()) <= hour+1){
+                lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+            }else {
+                if (hourlyActualPcs.get(i).getHourlyActualPcs() >0){
+                    lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+                }
+            }
         }
-//        for(int i = 0; i < hourlyActualPcs.size(); i++){
-//            if(i == 4 || i == 11){
-//                lineEntryList.add(new Entry(i, 0));
-//            }else {
-//                lineEntryList.add(new Entry(i, 136));//hourlyActualPcs.get(i).getHourlyActualPcs()));
-//            }
-//        }
-
         LineDataSet set = new LineDataSet(lineEntryList, "Line DataSet");
         set.setColor(ResourcesCompat.getColor(getResources(),R.color.green_line,null));
         set.setLineWidth(2f);
@@ -488,9 +490,15 @@ public class MainActivity extends FragmentActivity {
         set.setCircleRadius(3f);
         set.setFillColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-        //set.setDrawValues(false);
+        set.setDrawValues(true);
         set.setValueTextSize(10f);
         set.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.line_value,null));
+        set.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return String.valueOf(Math.round(value));
+            }
+        });
 
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
         d.addDataSet(set);
@@ -539,8 +547,9 @@ public class MainActivity extends FragmentActivity {
         YAxis leftAxis = chart1.getAxisLeft();
         leftAxis.setDrawGridLines(false);
         leftAxis.setAxisMinimum(0f); // this replaces setStartAtZero(true)
-        leftAxis.setEnabled(false); //old
-
+        leftAxis.setEnabled(true); //old
+        leftAxis.setTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+        leftAxis.setTextSize(8f);
 
         XAxis xAxis = chart1.getXAxis();
         xAxis.setEnabled(true);
@@ -622,16 +631,16 @@ public class MainActivity extends FragmentActivity {
         ArrayList<Entry> lineEntryList = new ArrayList<>();
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
 
-//        for(int i = 0; i < hourlyActualPcs.size(); i++){
-//            if(i == 4 || i == 11){
-//                lineEntryList.add(new Entry(i, 0));
-//            }else {
-//                lineEntryList.add(new Entry(i, 91));//hourlyActualPcs.get(i).getHourlyActualPcs()));
-//            }
-//        }
 
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         for(int i = 0; i < hourlyActualPcs.size(); i++){
-            lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+            if(Integer.parseInt(hourlyActualPcs.get(i).getHourName()) <= hour+1){
+                lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+            }else {
+                if (hourlyActualPcs.get(i).getHourlyActualPcs() >0){
+                     lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+                }
+            }
         }
         LineDataSet set = new LineDataSet(lineEntryList, "Line DataSet");
         set.setColor(ResourcesCompat.getColor(getResources(),R.color.green_line,null));
@@ -642,7 +651,13 @@ public class MainActivity extends FragmentActivity {
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         set.setValueTextSize(10f);
         set.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.line_value,null));
-         //set.setDrawValues(false);
+        set.setDrawValues(true);
+        set.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return String.valueOf(Math.round(value));
+            }
+        });
 
         set.setAxisDependency(YAxis.AxisDependency.LEFT);
         d.addDataSet(set);
@@ -664,6 +679,12 @@ public class MainActivity extends FragmentActivity {
 
         dataSet.setColor(ResourcesCompat.getColor(getResources(),R.color.pink500,null));
         dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+        dataSet.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return String.valueOf(Math.round(value));
+            }
+        });
 
         dataSet.setLabel(null);
         ArrayList<String> xAxisValues = new ArrayList<>();
@@ -734,6 +755,12 @@ public class MainActivity extends FragmentActivity {
 
         dataSet.setColor(ResourcesCompat.getColor(getResources(),R.color.pink500,null));
         dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
+        dataSet.setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value) {
+                return String.valueOf(Math.round(value));
+            }
+        });
 
         dataSet.setLabel(null);
 
