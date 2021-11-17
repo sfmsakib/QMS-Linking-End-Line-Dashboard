@@ -426,17 +426,16 @@ public class MainActivity extends FragmentActivity {
         ArrayList<BarEntry> barEntryList = new ArrayList<>();
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(1).getHourlyActualPcsList();
 
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         for(int i = 0; i < hourlyActualPcs.size(); i++){
-            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyTargetPcs()));
+            if(Integer.parseInt(hourlyActualPcs.get(i).getHourName()) <= hour+1){
+                barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+            }else {
+                if (hourlyActualPcs.get(i).getHourlyActualPcs() >0){
+                    barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+                }
+            }
         }
-
-//        for(int i = 0; i < hourlyActualPcs.size(); i++){
-//            if(i == 4 || i == 11){
-//                barEntryList.add(new BarEntry(i, 0));
-//            }else {
-//                barEntryList.add(new BarEntry(i, 136));//hourlyActualPcs.get(i).getHourlyActualPcs()));
-//            }
-//        }
 
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
 
@@ -445,7 +444,9 @@ public class MainActivity extends FragmentActivity {
         dataSet.setLabel(null);
         dataSet.setValueTextSize(10f);
         dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
-        dataSet.setDrawValues(false);
+        dataSet.setDrawValues(true);
+        dataSet.setValueTextSize(10f);
+        dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.line_value,null));
 
         float groupSpace = 0.06f;
         float barSpace = 0.02f; // x2 dataset
@@ -473,16 +474,10 @@ public class MainActivity extends FragmentActivity {
         ArrayList<Entry> lineEntryList = new ArrayList<>();
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(1).getHourlyActualPcsList();
 
-        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         for(int i = 0; i < hourlyActualPcs.size(); i++){
-            if(Integer.parseInt(hourlyActualPcs.get(i).getHourName()) <= hour+1){
-                lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
-            }else {
-                if (hourlyActualPcs.get(i).getHourlyActualPcs() >0){
-                    lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
-                }
-            }
+            lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyTargetPcs()));
         }
+
         LineDataSet set = new LineDataSet(lineEntryList, "Line DataSet");
         set.setColor(ResourcesCompat.getColor(getResources(),R.color.green_line,null));
         set.setLineWidth(2f);
@@ -490,7 +485,7 @@ public class MainActivity extends FragmentActivity {
         set.setCircleRadius(3f);
         set.setFillColor(ResourcesCompat.getColor(getResources(),R.color.white,null));
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
-        set.setDrawValues(true);
+        set.setDrawValues(false);
         set.setValueTextSize(10f);
         set.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.line_value,null));
         set.setValueFormatter(new ValueFormatter() {
@@ -587,17 +582,19 @@ public class MainActivity extends FragmentActivity {
         ArrayList<BarEntry> barEntryList = new ArrayList<>();
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
 
-        for(int i = 0; i < hourlyActualPcs.size(); i++){
-            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyTargetPcs()));
-        }
 //        for(int i = 0; i < hourlyActualPcs.size(); i++){
-//            if(i == 4 || i == 11){
-//                barEntryList.add(new BarEntry(i, 0));
-//            }else {
-//                barEntryList.add(new BarEntry(i, 91));//hourlyActualPcs.get(i).getHourlyActualPcs()));
-//            }
+//            barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyTargetPcs()));
 //        }
-
+        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        for(int i = 0; i < hourlyActualPcs.size(); i++){
+            if(Integer.parseInt(hourlyActualPcs.get(i).getHourName()) <= hour+1){
+                barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+            }else {
+                if (hourlyActualPcs.get(i).getHourlyActualPcs() >0){
+                    barEntryList.add(new BarEntry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+                }
+            }
+        }
         BarDataSet dataSet = new BarDataSet(barEntryList, "Defect Pcs");
 
         dataSet.setColor(ResourcesCompat.getColor(getResources(),R.color.blue,null));
@@ -605,7 +602,8 @@ public class MainActivity extends FragmentActivity {
         dataSet.setLabel(null);
         dataSet.setValueTextSize(10f);
         dataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
-        dataSet.setDrawValues(false);
+        dataSet.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.line_value,null));
+        dataSet.setDrawValues(true);
 
         float groupSpace = 0.06f;
         float barSpace = 0.02f; // x2 dataset
@@ -631,17 +629,20 @@ public class MainActivity extends FragmentActivity {
         ArrayList<Entry> lineEntryList = new ArrayList<>();
         List<HourlyActualPcs> hourlyActualPcs = dataModels.get(0).getHourlyActualPcsList();
 
-
-        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
         for(int i = 0; i < hourlyActualPcs.size(); i++){
-            if(Integer.parseInt(hourlyActualPcs.get(i).getHourName()) <= hour+1){
-                lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
-            }else {
-                if (hourlyActualPcs.get(i).getHourlyActualPcs() >0){
-                     lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
-                }
-            }
+            lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyTargetPcs()));
         }
+
+//        int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+//        for(int i = 0; i < hourlyActualPcs.size(); i++){
+//            if(Integer.parseInt(hourlyActualPcs.get(i).getHourName()) <= hour+1){
+//                lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+//            }else {
+//                if (hourlyActualPcs.get(i).getHourlyActualPcs() >0){
+//                     lineEntryList.add(new Entry(i, hourlyActualPcs.get(i).getHourlyActualPcs()));
+//                }
+//            }
+//        }
         LineDataSet set = new LineDataSet(lineEntryList, "Line DataSet");
         set.setColor(ResourcesCompat.getColor(getResources(),R.color.green_line,null));
         set.setLineWidth(2f);
@@ -651,7 +652,7 @@ public class MainActivity extends FragmentActivity {
         set.setMode(LineDataSet.Mode.CUBIC_BEZIER);
         set.setValueTextSize(10f);
         set.setValueTextColor(ResourcesCompat.getColor(getResources(),R.color.line_value,null));
-        set.setDrawValues(true);
+        set.setDrawValues(false);
         set.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
